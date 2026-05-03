@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta charset="utf-8" />
+<title>PlaneJane</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Condensed:ital,wght@1,800&display=swap">
+<link rel="stylesheet" href="globals.css">
+<link rel="stylesheet" href="styleguide.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        "gc-moon-yellow": "var(--gc-moon-yellow)",
+        "gc-night-rider": "var(--gc-night-rider)",
+        "gc-noble": "var(--gc-noble)",
+        "gcs-cobalt": "var(--gcs-cobalt)",
+        "gcs-midnight": "var(--gcs-midnight)",
+        "gcs-sea-foam": "var(--gcs-sea-foam)"
+      },
+      fontFamily: {
+        "h1-48px": "var(--h1-48px-font-family)",
+        "h2-24px": "var(--h2-24px-font-family)",
+        "h3-18px": "var(--h3-18px-font-family)",
+        "h4-16px": "var(--h4-16px-font-family)",
+        "h5-14px": "var(--h5-14px-font-family)",
+        "h6-13px": "var(--h6-13px-font-family)",
+        "pull-quote": "var(--pull-quote-font-family)"
+      },
+      boxShadow: {
+        "shadow": "var(--shadow)"
+      }
+    }
+  },
+  plugins: []
+}
+</script>
+</head>
+<body class="m-0 min-h-full bg-white">
+<div class="flex flex-col items-start relative">
+<header class="px-80 py-5 bg-[#111111] border-b [border-bottom-style:solid] border-[#1d1d1f] flex flex-col items-center justify-center gap-5 relative self-stretch w-full flex-[0_0_auto]">
+<div class="items-center justify-between flex px-5 py-0 relative self-stretch w-full flex-[0_0_auto] gap-6">
+<a href="#" aria-label="PlaneJane home" class="inline-flex items-center justify-center gap-2.5 px-2.5 py-1 relative flex-[0_0_auto] [background:linear-gradient(0deg,rgba(238,28,37,1)_0%,rgba(238,28,37,1)_100%)]">
+<span class="relative w-fit mt-[-1.00px] [text-shadow:0px_0px_40px_#000000cc] [font-family:'Roboto_Condensed-ExtraBoldItalic',Helvetica] font-extrabold italic text-white text-[28px] tracking-[-0.56px] leading-8 whitespace-nowrap shadow-shadow">PLANEJANE</span>
+</a>
+<nav aria-label="Primary" class="inline-flex items-center gap-6 relative flex-[0_0_auto]">
+<a href="#" class="inline-flex items-center gap-2 relative flex-[0_0_auto]">
+<span class="relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-white text-base tracking-[0] leading-6 whitespace-nowrap">New Releases</span>
+</a>
+<a href="#" class="inline-flex items-center gap-2 relative flex-[0_0_auto]">
+<span class="text-white text-base leading-6 relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium tracking-[0] whitespace-nowrap">Songs</span>
+</a>
+<a href="#" class="inline-flex items-center gap-2 relative flex-[0_0_auto]">
+<span class="text-white text-base leading-6 relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium tracking-[0] whitespace-nowrap">Artists</span>
+</a>
+<a href="#" class="inline-flex items-center gap-2 relative flex-[0_0_auto]">
+<span class="relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-white text-base tracking-[0] leading-6 whitespace-nowrap">Albums</span>
+</a>
+<a href="#" class="inline-flex items-center gap-2 relative flex-[0_0_auto]">
+<span class="text-white text-base leading-6 relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium tracking-[0] whitespace-nowrap">Videos</span>
+</a>
+<a href="#" class="inline-flex items-center gap-2 relative flex-[0_0_auto]">
+<span class="text-white text-base leading-6 relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium tracking-[0] whitespace-nowrap">Shop</span>
+</a>
+<a href="#" class="inline-flex items-center gap-2 relative flex-[0_0_auto]">
+<span class="text-white text-base leading-6 relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium tracking-[0] whitespace-nowrap">Contact</span>
+</a>
+</nav>
+<img class="relative flex-[0_0_auto]" src="img/icons.svg" alt="Header utility icons" />
+<form class="flex w-[246px] items-center justify-between px-4 py-3 relative rounded-md border border-solid border-[#666666]" role="search" action="#">
+<label for="site-search" class="sr-only">Search</label>
+<input id="site-search" name="search" aria-label="Search" class="relative flex-1 min-w-0 mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-white text-base tracking-[0] leading-6 [background:transparent] border-[none] p-0 outline-none placeholder:text-white" placeholder="Search" type="search" />
+<button type="submit" aria-label="Submit search" class="relative w-6 h-6 aspect-[1] flex items-center justify-center">
+<span class="w-6 h-6 flex aspect-[1]">
+<img class="flex-1 w-[19.29px]" src="img/vector-4.svg" alt="" />
+</span>
+</button>
+</form>
+</div>
+</header>
+<main class="flex flex-col items-start relative self-stretch w-full">
+<section class="px-80 py-9 [background:linear-gradient(0deg,rgba(0,0,0,0.4)_0%,rgba(0,0,0,0.4)_100%),linear-gradient(0deg,rgba(255,255,255,1)_0%,rgba(255,255,255,1)_100%)] flex flex-col items-start gap-2.5 relative self-stretch w-full flex-[0_0_auto]">
+<div class="items-center justify-end gap-10 flex px-5 py-0 relative self-stretch w-full flex-[0_0_auto]">
+<section aria-label="Featured video" class="flex items-center gap-2.5 relative flex-1 grow aspect-[1.78]">
+<div class="relative flex-1 grow aspect-[1.78]">
+<img class="object-cover relative flex-1 grow aspect-[1.78] w-full h-full" src="img/video.png" alt="Sean Leon - Juice video thumbnail" />
+<button type="button" aria-label="Play Sean Leon - Juice" class="absolute top-[calc(50.00%_-_51px)] left-[calc(50.00%_-_47px)] w-[97px] h-[102px]">
+<img class="w-full h-full" src="img/play.svg" alt="" />
+</button>
+<div class="absolute top-5 left-5 right-5 text-white text-base tracking-[0] leading-6 whitespace-nowrap [font-family:'Inter-Regular',Helvetica] font-normal">Sean Leon - Juice</div>
+<div class="flex flex-col w-full items-start absolute left-0 bottom-0">
+<div class="flex items-center relative self-stretch w-full flex-[0_0_auto] z-[1]" aria-hidden="true">
+<div class="relative w-20 h-2.5 bg-[#ee1c25]"></div>
+<div class="bg-[#777777] relative flex-1 grow h-2.5"></div>
+<div class="bg-[#444444] relative flex-1 grow h-2.5"></div>
+<div class="absolute top-0 left-[123px] w-1 h-2.5 bg-[#f7ce10]"></div>
+<div class="absolute top-[calc(50.00%_-_9px)] left-[71px] w-[18px] h-[18px] bg-[#cccccc] rounded-[9px] border-[5px] border-solid border-white shadow-[0px_0px_10px_#00000066] aspect-[1]"></div>
+</div>
+<div class="flex items-center justify-between pl-5 pr-2.5 py-1.5 relative self-stretch w-full flex-[0_0_auto] z-0 bg-[#1b1b1b]">
+<div class="inline-flex items-center gap-3 relative flex-[0_0_auto]">
+<div class="inline-flex items-center gap-5 relative flex-[0_0_auto]">
+<button type="button" aria-label="Replay" class="relative w-6 h-6 aspect-[1]">
+<img class="absolute w-[71.88%] h-[83.89%] top-[16.11%] left-[28.12%]" src="img/vector-5.svg" alt="" />
+</button>
+<button type="button" aria-label="Captions" class="relative w-6 h-6 aspect-[1]">
+<img class="absolute w-[87.50%] h-[85.64%] top-[14.36%] left-[12.50%]" src="img/image.svg" alt="" />
+</button>
+</div>
+<div class="inline-flex items-center gap-2 relative flex-[0_0_auto]">
+<time class="relative w-fit mt-[-1.00px] [font-family:'Inter-Regular',Helvetica] font-normal text-white text-xs tracking-[0] leading-4 whitespace-nowrap" datetime="PT2S">0:02</time>
+<div class="relative w-fit mt-[-1.00px] [font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-xs tracking-[0] leading-4 whitespace-nowrap">/ 4:20</div>
+</div>
+</div>
+<div class="inline-flex items-center gap-5 relative flex-[0_0_auto]">
+<button type="button" aria-label="Fullscreen" class="relative w-6 h-6 aspect-[1]">
+<img class="absolute w-[90.62%] h-[81.25%] top-[18.75%] left-[9.38%]" src="img/vector-2.svg" alt="" />
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<aside aria-label="New releases sidebar" class="flex flex-col w-[420px] items-start gap-4 relative">
+<div class="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
+<div class="flex gap-2 self-stretch w-full flex-[0_0_auto] items-center justify-center relative">
+<div class="relative w-7 h-7 aspect-[1]">
+<img class="absolute w-[75.00%] h-[87.30%] top-[12.70%] left-[25.00%]" src="img/vector-6.svg" alt="" />
+</div>
+<h2 class="relative flex-1 mt-[-1.00px] [font-family:'Inter-Regular',Helvetica] font-normal text-white text-lg tracking-[-0.36px] leading-7">New Releases</h2>
+</div>
+</div>
+<article class="flex items-start gap-4 relative self-stretch w-full flex-[0_0_auto]">
+<div class="inline-flex items-center gap-2.5 relative flex-[0_0_auto]">
+<img class="relative w-20 h-20 aspect-[1] object-cover" src="img/image-4.svg" alt="New Releases artwork" />
+</div>
+<div class="flex flex-col items-start justify-between relative flex-1 self-stretch grow">
+<div class="flex-col items-start gap-3 flex relative self-stretch w-full flex-[0_0_auto]">
+<h3 class="relative self-stretch mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-white text-lg tracking-[0] leading-7">New Releases</h3>
+</div>
+<div class="flex items-center justify-between relative self-stretch w-full flex-[0_0_auto]">
+<div class="relative w-fit mt-[-1.00px] [font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5 whitespace-nowrap">3,405 views</div>
+<div class="relative w-fit mt-[-1.00px] [font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5 whitespace-nowrap">78 comments</div>
+</div>
+</div>
+</article>
+<div class="relative self-stretch w-full h-px bg-[#666666]"></div>
+<article class="flex items-start gap-4 relative self-stretch w-full flex-[0_0_auto]">
+<div class="inline-flex items-center gap-2.5 relative flex-[0_0_auto]">
+<img class="relative w-20 h-20 aspect-[1] object-cover" src="img/image-3.svg" alt="New Releases artwork" />
+</div>
+<div class="flex flex-col items-start justify-between relative flex-1 self-stretch grow">
+<div class="flex-col items-start gap-3 flex relative self-stretch w-full flex-[0_0_auto]">
+<h3 class="relative self-stretch mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-white text-lg tracking-[0] leading-7">New Releases</h3>
+</div>
+<div class="flex items-center justify-between relative self-stretch w-full flex-[0_0_auto]">
+<div class="relative w-fit mt-[-1.00px] [font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5 whitespace-nowrap">3,405 views</div>
+<div class="relative w-fit mt-[-1.00px] [font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5 whitespace-nowrap">78 comments</div>
+</div>
+</div>
+</article>
+<div class="relative self-stretch w-full h-px bg-[#666666]"></div>
+<article class="flex items-start gap-4 relative self-stretch w-full flex-[0_0_auto]">
+<div class="inline-flex items-center gap-2.5 relative flex-[0_0_auto]">
+<img class="relative w-20 h-20 aspect-[1] object-cover" src="img/image-2.svg" alt="New Releases artwork" />
+</div>
+<div class="flex flex-col items-start justify-between relative flex-1 self-stretch grow">
+<div class="flex-col items-start gap-3 flex relative self-stretch w-full flex-[0_0_auto]">
+<h3 class="relative self-stretch mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-white text-lg tracking-[0] leading-7">New Releases</h3>
+</div>
+<div class="flex items-center justify-between relative self-stretch w-full flex-[0_0_auto]">
+<div class="relative w-fit mt-[-1.00px] [font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5 whitespace-nowrap">3,405 views</div>
+<div class="relative w-fit mt-[-1.00px] [font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5 whitespace-nowrap">78 comments</div>
+</div>
+</div>
+</article>
+<button class="all-[unset] box-border self-stretch w-full flex-[0_0_auto] flex items-center justify-center gap-2 px-6 py-3 relative bg-[#333333] rounded-md" type="button">
+<div class="relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-white text-base tracking-[0] leading-6 whitespace-nowrap">VIEW MORE</div>
+</button>
+</aside>
+</div>
+</section>
+<section class="flex flex-col items-center justify-center gap-5 px-80 py-9 relative self-stretch w-full flex-[0_0_auto] bg-[#111111]">
+<div class="flex-wrap items-start justify-between gap-[32px_40px] flex px-5 py-0 relative self-stretch w-full flex-[0_0_auto]">
+<article class="flex flex-col w-[280px] items-start gap-4 relative">
+<div class="flex items-center gap-2.5 relative self-stretch w-full flex-[0_0_auto]">
+<img class="relative w-[280px] h-[280px] aspect-[1] object-cover" src="img/image-5.png" alt="Scru Face Jean - Another Night [New Mixtape] cover" />
+</div>
+<div class="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
+<h2 class="relative self-stretch mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-white text-lg tracking-[0] leading-7">Scru Face Jean - Another Night [New Mixtape]</h2>
+<div class="relative self-stretch [font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">Scru Face Jean</div>
+</div>
+</article>
+<article class="flex flex-col w-[280px] items-start gap-4 relative">
+<div class="flex items-center gap-2.5 relative self-stretch w-full flex-[0_0_auto]">
+<img class="relative w-[280px] h-[280px] aspect-[1] object-cover" src="img/image-2.png" alt="I Am Mr. Mosley cover" />
+</div>
+<div class="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
+<h2 class="relative self-stretch mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-white text-lg tracking-[0] leading-7">I Am Mr. Mosley</h2>
+<div class="relative self-stretch [font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">Drakeo The Ruler</div>
+</div>
+</article>
+<article class="flex flex-col w-[280px] items-start gap-4 relative">
+<div class="flex items-center gap-2.5 relative self-stretch w-full flex-[0_0_auto]">
+<img class="relative w-[280px] h-[280px] aspect-[1] object-cover" src="img/image-9.png" alt="It's Better This Way cover" />
+</div>
+<div class="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
+<h2 class="relative self-stretch mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-white text-lg tracking-[0] leading-7">It's Better This Way</h2>
+<div class="relative self-stretch [font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">Big K.R.I.T.</div>
+</div>
+</article>
+<article class="flex flex-col w-[280px] items-start gap-4 relative">
+<div class="flex items-center gap-2.5 relative self-stretch w-full flex-[0_0_auto]">
+<img class="relative w-[280px] h-[280px] aspect-[1] object-cover" src="img/image-8.png" alt="The Cooligan: Death of My Teenage Mind, Part: II cover" />
+</div>
+<div class="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
+<h2 class="relative self-stretch mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-white text-lg tracking-[0] leading-7">The Cooligan: Death of My Teenage Mind, Part: II</h2>
+<p class="relative self-stretch [font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">Scotty ATL &amp; Honey Cocaine</p>
+</div>
+</article>
+<article class="flex flex-col w-[280px] items-start gap-4 relative">
+<div class="flex items-center gap-2.5 relative self-stretch w-full flex-[0_0_auto]">
+<img class="relative w-[280px] h-[280px] aspect-[1] object-cover" src="img/image-7.png" alt="These Things Really Do Happen When It's Dark Out cover" />
+</div>
+<div class="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
+<h2 class="relative self-stretch mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-white text-lg tracking-[0] leading-7">These Things Really Do Happen When It's Dark Out</h2>
+<div class="relative self-stretch [font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">G-Eazy</div>
+</div>
+</article>
+<article class="flex flex-col w-[280px] items-start gap-4 relative">
+<div class="flex items-center gap-2.5 relative self-stretch w-full flex-[0_0_auto]">
+<img class="relative w-[280px] h-[280px] aspect-[1] object-cover" src="img/image-4.png" alt="Jeezy - Politically Correct EP [New Mixtape] cover" />
+</div>
+<div class="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
+<h2 class="relative self-stretch mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-white text-lg tracking-[0] leading-7">Jeezy - Politically Correct EP [New Mixtape]</h2>
+<div class="relative self-stretch [font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">Jeezy tha Snowman</div>
+</div>
+</article>
+<article class="flex flex-col w-[280px] items-start gap-4 relative">
+<div class="flex items-center gap-2.5 relative self-stretch w-full flex-[0_0_auto]">
+<img class="relative w-[280px] h-[280px] aspect-[1] object-cover" src="img/image.png" alt="Rich The Kid &amp; iLoveMakonnen - Whip It [Upcoming Mixtape] cover" />
+</div>
+<div class="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
+<h2 class="relative self-stretch mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-white text-lg tracking-[0] leading-7">Rich The Kid &amp; iLoveMakonnen - Whip It [Upcoming Mixtape]</h2>
+<p class="relative self-stretch [font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">Rich The Kid &amp; iLoveMakonnen</p>
+</div>
+</article>
+<article class="flex flex-col w-[280px] items-start gap-4 relative">
+<div class="flex items-center gap-2.5 relative self-stretch w-full flex-[0_0_auto]">
+<img class="relative w-[280px] h-[280px] aspect-[1] object-cover" src="img/image-10.png" alt="Alliance &amp; Loyalty cover" />
+</div>
+<div class="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
+<h2 class="relative self-stretch mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-white text-lg tracking-[0] leading-7">Alliance &amp; Loyalty</h2>
+<div class="relative self-stretch [font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">Cool and the Gang</div>
+</div>
+</article>
+<button class="all-[unset] box-border w-full flex items-center justify-center gap-2 px-6 py-3 relative bg-[#333333] rounded-md" type="button">
+<div class="relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-white text-base tracking-[0] leading-6 whitespace-nowrap">VIEW MORE</div>
+</button>
+</div>
+</section>
+<section class="px-80 py-14 [background:linear-gradient(0deg,rgba(234,235,240,1)_0%,rgba(234,235,240,1)_100%)] flex flex-col items-start gap-2.5 relative self-stretch w-full flex-[0_0_auto]">
+<div class="items-center gap-20 flex px-5 py-0 relative self-stretch w-full flex-[0_0_auto]">
+<div class="flex flex-col w-[580px] items-start gap-6 relative">
+<div class="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
+<div class="flex gap-2 self-stretch w-full flex-[0_0_auto] items-center justify-center relative">
+<div class="relative w-7 h-7 aspect-[1]">
+<img class="absolute w-[78.12%] h-[87.50%] top-[12.50%] left-[21.88%]" src="img/vector-8.svg" alt="" />
+</div>
+<div class="text-[#ee1c25] relative flex-1 mt-[-1.00px] [font-family:'Inter-Regular',Helvetica] font-normal text-lg tracking-[-0.36px] leading-7">Featured Artist</div>
+</div>
+<h2 class="relative self-stretch text-[#1d1d1f] text-4xl tracking-[-0.72px] leading-10 [font-family:'Inter-Regular',Helvetica] font-normal">Sean Leon</h2>
+<div class="relative self-stretch [font-family:'Inter-Regular',Helvetica] font-normal text-[#1d1d1f] text-sm tracking-[-0.28px] leading-5">Toronto, Canada</div>
+</div>
+<p class="relative self-stretch [font-family:'Inter-Regular',Helvetica] font-normal text-[#555555] text-base tracking-[0] leading-6">Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Do you see a little Asian child with a blank expression on his face sitting outside on a mechanical helicopter that shakes when you put quarters in it? No? Well, that's what you see at a toy store. And you must think you're in a toy store, because you're here shopping for an infant named Jeb.<br/><br/>Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do. That's also clear. But for some reason, you and I react the exact same way to water. We swallow it too fast, we choke. We get some in our lungs, we drown. However unreal it may, we are connected, you and I.</p>
+<div class="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
+<div class="flex gap-2 self-stretch w-full flex-[0_0_auto] items-center justify-center relative">
+<div class="relative w-7 h-7 aspect-[1]">
+<img class="absolute w-[75.00%] h-[87.30%] top-[12.70%] left-[25.00%]" src="img/vector.svg" alt="" />
+</div>
+<div class="relative flex-1 [font-family:'Inter-Regular',Helvetica] font-normal text-[#1d1d1f] text-base tracking-[-0.32px] leading-6">New Releases</div>
+</div>
+</div>
+<div class="flex items-start gap-5 relative self-stretch w-full flex-[0_0_auto]">
+<article class="inline-flex flex-col items-start gap-4 relative flex-[0_0_auto]">
+<div class="inline-flex items-center gap-2.5 relative flex-[0_0_auto]">
+<img class="relative w-[180px] h-[180px] aspect-[1] object-cover" src="img/image-15.png" alt="New Releases artwork" />
+</div>
+<div class="flex flex-col w-[180px] items-start gap-3 relative flex-[0_0_auto]">
+<h3 class="relative self-stretch mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-[#1d1d1f] text-lg tracking-[0] leading-7">New Releases</h3>
+<div class="relative self-stretch [font-family:'Inter-Regular',Helvetica] font-normal text-[#666666] text-sm tracking-[0] leading-5">New Releases</div>
+</div>
+</article>
+<article class="inline-flex flex-col items-start gap-4 relative flex-[0_0_auto]">
+<div class="inline-flex items-center gap-2.5 relative flex-[0_0_auto]">
+<img class="relative w-[180px] h-[180px] aspect-[1] object-cover" src="img/image-12.png" alt="New Releases artwork" />
+</div>
+<div class="flex flex-col w-[180px] items-start gap-3 relative flex-[0_0_auto]">
+<h3 class="relative self-stretch mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-[#1d1d1f] text-lg tracking-[0] leading-7">New Releases</h3>
+<div class="relative self-stretch [font-family:'Inter-Regular',Helvetica] font-normal text-[#666666] text-sm tracking-[0] leading-5">New Releases</div>
+</div>
+</article>
+<article class="inline-flex flex-col items-start gap-4 relative flex-[0_0_auto]">
+<div class="inline-flex items-center gap-2.5 relative flex-[0_0_auto]">
+<img class="relative w-[180px] h-[180px] aspect-[1] object-cover" src="img/image-14.png" alt="New Releases artwork" />
+</div>
+<div class="flex flex-col w-[180px] items-start gap-3 relative flex-[0_0_auto]">
+<h3 class="relative self-stretch mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-[#1d1d1f] text-lg tracking-[0] leading-7">New Releases</h3>
+<div class="relative self-stretch [font-family:'Inter-Regular',Helvetica] font-normal text-[#666666] text-sm tracking-[0] leading-5">New Releases</div>
+</div>
+</article>
+</div>
+</div>
+<div class="flex items-center justify-center gap-2.5 px-0 py-0 relative flex-1 grow self-stretch">
+<img class="relative flex-1 grow h-full object-cover" src="img/image-3.png" alt="Sean Leon portrait" />
+</div>
+</div>
+</section>
+<section class="px-80 py-14 [background:linear-gradient(0deg,rgba(0,0,0,0.4)_0%,rgba(0,0,0,0.4)_100%),linear-gradient(0deg,rgba(231,71,59,1)_0%,rgba(231,71,59,1)_100%)] flex flex-col items-start gap-2.5 relative self-stretch w-full flex-[0_0_auto]">
+<div class="items-center justify-end gap-20 flex px-5 py-0 relative self-stretch w-full flex-[0_0_auto]">
+<div class="flex items-center justify-center gap-2.5 px-[50px] py-0 relative flex-1 grow">
+<img class="relative flex-1 grow aspect-[1] object-cover" src="img/image-3.png" alt="Drink More Water 5 album cover" />
+</div>
+<div class="flex flex-col w-[580px] items-start gap-6 relative">
+<div class="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
+<div class="flex gap-2 self-stretch w-full flex-[0_0_auto] items-center justify-center relative">
+<div class="relative w-7 h-7 aspect-[1]">
+<img class="absolute w-[81.25%] h-[90.62%] top-[9.38%] left-[18.75%]" src="img/vector-3.svg" alt="" />
+</div>
+<div class="text-white relative flex-1 mt-[-1.00px] [font-family:'Inter-Regular',Helvetica] font-normal text-lg tracking-[-0.36px] leading-7">Featured Album</div>
+</div>
+<div class="items-center gap-2.5 flex relative self-stretch w-full flex-[0_0_auto]">
+<h2 class="relative flex-1 mt-[-1.00px] [font-family:'Inter-Regular',Helvetica] font-normal text-white text-4xl tracking-[-0.72px] leading-10">Drink More Water 5</h2>
+<div class="inline-flex flex-col items-end relative flex-[0_0_auto]">
+<div class="inline-flex h-4 gap-0.5 items-center justify-center relative">
+<div class="relative w-4 h-4 aspect-[1]">
+<img class="absolute w-[78.81%] h-[87.21%] top-[12.79%] left-[21.19%]" src="img/vector-7.svg" alt="" />
+</div>
+</div>
+<div class="relative w-fit [font-family:'Inter-Bold',Helvetica] font-bold text-white text-2xl tracking-[-0.48px] leading-6 whitespace-nowrap">70%</div>
+</div>
+</div>
+<div class="flex items-center gap-2 relative self-stretch w-full flex-[0_0_auto]">
+<div class="relative w-fit mt-[-1.00px] [font-family:'Inter-Regular',Helvetica] font-normal text-white text-sm tracking-[-0.28px] leading-5 whitespace-nowrap">Isaiah Rashad</div>
+<div class="relative w-fit [font-family:'Inter-Regular',Helvetica] font-normal text-white text-[10px] tracking-[-0.20px] leading-3 whitespace-nowrap">•</div>
+<div class="relative w-fit mt-[-1.00px] [font-family:'Inter-Regular',Helvetica] font-normal text-white text-sm tracking-[-0.28px] leading-5 whitespace-nowrap">72 views</div>
+<div class="relative w-fit [font-family:'Inter-Regular',Helvetica] font-normal text-white text-[10px] tracking-[-0.20px] leading-3 whitespace-nowrap">•</div>
+<div class="relative w-fit mt-[-1.00px] [font-family:'Inter-Regular',Helvetica] font-normal text-white text-sm tracking-[-0.28px] leading-5 whitespace-nowrap">12 comments</div>
+<div class="relative w-fit [font-family:'Inter-Regular',Helvetica] font-normal text-white text-[10px] tracking-[-0.20px] leading-3 whitespace-nowrap">•</div>
+<div class="relative w-fit mt-[-1.00px] [font-family:'Inter-Regular',Helvetica] font-normal text-white text-sm tracking-[-0.28px] leading-5 whitespace-nowrap">40,073 downloads</div>
+</div>
+</div>
+<p class="relative self-stretch [font-family:'Inter-Regular',Helvetica] font-normal text-white text-base tracking-[0] leading-6">Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Do you see a little Asian child with a blank expression on his face sitting outside on a mechanical helicopter that shakes when you put quarters in it? No? Well, that's what you see at a toy store. And you must think you're in a toy store, because you're here shopping for an infant named Jeb.<br/><br/>Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do. That's also clear. But for some reason, you and I react the exact same way to water. We swallow it too fast, we choke. We get some in our lungs, we drown. However unreal it may, we are connected, you and I.</p>
+</div>
+</div>
+</section>
+<section class="flex flex-col items-center justify-center gap-5 px-80 py-9 relative self-stretch w-full flex-[0_0_auto] bg-[#111111]">
+<div class="items-center gap-10 flex px-5 py-0 relative self-stretch w-full flex-[0_0_auto]">
+<article class="flex w-[400px] items-start gap-4 relative">
+<div class="inline-flex items-center gap-2.5 relative flex-[0_0_auto]">
+<img class="relative w-[180px] h-[180px] aspect-[1] object-cover" src="img/image-13.png" alt="New Releases artwork" />
+</div>
+<div class="flex flex-col items-start justify-between relative flex-1 self-stretch grow">
+<div class="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
+<h2 class="relative self-stretch mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-white text-lg tracking-[0] leading-7">New Releases</h2>
+<div class="relative self-stretch [font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">New Releases</div>
+</div>
+<div class="flex flex-col items-start relative self-stretch w-full flex-[0_0_auto]">
+<time class="relative self-stretch mt-[-1.00px] [font-family:'Inter-Bold',Helvetica] font-bold text-white text-3xl tracking-[0] leading-9" datetime="PT2M41S">00:02:41</time>
+<div class="relative self-stretch [font-family:'Inter-Bold',Helvetica] font-bold text-[#666666] text-2xl tracking-[0] leading-8">hrs:min:sec</div>
+</div>
+</div>
+</article>
+<article class="flex w-[400px] items-start gap-4 relative">
+<div class="inline-flex items-center gap-2.5 relative flex-[0_0_auto]">
+<img class="relative w-[180px] h-[180px] aspect-[1] object-cover" src="img/image-11.png" alt="New Releases artwork" />
+</div>
+<div class="flex flex-col items-start justify-between relative flex-1 self-stretch grow">
+<div class="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
+<h2 class="relative self-stretch mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-white text-lg tracking-[0] leading-7">New Releases</h2>
+<div class="relative self-stretch [font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">New Releases</div>
+</div>
+<div class="flex flex-col items-start relative self-stretch w-full flex-[0_0_auto]">
+<time class="relative self-stretch mt-[-1.00px] [font-family:'Inter-Bold',Helvetica] font-bold text-white text-3xl tracking-[0] leading-9" datetime="PT2M41S">00:02:41</time>
+<div class="relative self-stretch [font-family:'Inter-Bold',Helvetica] font-bold text-[#666666] text-2xl tracking-[0] leading-8">hrs:min:sec</div>
+</div>
+</div>
+</article>
+<article class="flex w-[400px] items-start gap-4 relative">
+<div class="inline-flex items-center gap-2.5 relative flex-[0_0_auto]">
+<img class="relative w-[180px] h-[180px] aspect-[1] object-cover" src="img/image-6.png" alt="New Releases artwork" />
+</div>
+<div class="flex flex-col items-start justify-between relative flex-1 self-stretch grow">
+<div class="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
+<h2 class="relative self-stretch mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-white text-lg tracking-[0] leading-7">New Releases</h2>
+<div class="relative self-stretch [font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">New Releases</div>
+</div>
+<div class="flex flex-col items-start relative self-stretch w-full flex-[0_0_auto]">
+<time class="relative self-stretch mt-[-1.00px] [font-family:'Inter-Bold',Helvetica] font-bold text-white text-3xl tracking-[0] leading-9" datetime="PT2M41S">00:02:41</time>
+<div class="relative self-stretch [font-family:'Inter-Bold',Helvetica] font-bold text-[#666666] text-2xl tracking-[0] leading-8">hrs:min:sec</div>
+</div>
+</div>
+</article>
+</div>
+</section>
+</main>
+<footer class="px-80 py-6 bg-white flex flex-col items-center justify-center gap-5 relative self-stretch w-full flex-[0_0_auto]">
+<div class="items-center justify-between flex px-5 py-0 relative self-stretch w-full flex-[0_0_auto]">
+<div class="inline-flex items-center gap-2 relative flex-[0_0_auto]">
+<p class="relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-[#ee1c25] text-sm tracking-[0] leading-5 whitespace-nowrap">Copyright &copy; 2026 PlaneJane - ilovethehype | mymusic2loud | alwaysonfire LLC</p>
+</div>
+<nav aria-label="Footer" class="inline-flex items-center gap-6 relative flex-[0_0_auto]">
+<a href="#" class="inline-flex items-center gap-2 relative flex-[0_0_auto]">
+<span class="relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-[#1d1d1f] text-sm tracking-[0] leading-5 whitespace-nowrap">New Releases</span>
+</a>
+<a href="#" class="inline-flex items-center gap-2 relative flex-[0_0_auto]">
+<span class="text-[#1d1d1f] text-sm leading-5 relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium tracking-[0] whitespace-nowrap">Songs</span>
+</a>
+<a href="#" class="inline-flex items-center gap-2 relative flex-[0_0_auto]">
+<span class="text-[#1d1d1f] text-sm leading-5 relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium tracking-[0] whitespace-nowrap">Artists</span>
+</a>
+<a href="#" class="inline-flex items-center gap-2 relative flex-[0_0_auto]">
+<span class="relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-[#1d1d1f] text-sm tracking-[0] leading-5 whitespace-nowrap">Albums</span>
+</a>
+<a href="#" class="inline-flex items-center gap-2 relative flex-[0_0_auto]">
+<span class="text-[#1d1d1f] text-sm leading-5 relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium tracking-[0] whitespace-nowrap">Videos</span>
+</a>
+<a href="#" class="inline-flex items-center gap-2 relative flex-[0_0_auto]">
+<span class="text-[#1d1d1f] text-sm leading-5 relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium tracking-[0] whitespace-nowrap">Shop</span>
+</a>
+<a href="#" class="inline-flex items-center gap-2 relative flex-[0_0_auto]">
+<span class="text-[#1d1d1f] text-sm leading-5 relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium tracking-[0] whitespace-nowrap">Contact</span>
+</a>
+</nav>
+</div>
+</footer>
+</div>
+</body>
+</html>
