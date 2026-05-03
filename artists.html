@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta charset="utf-8" />
+<title>Artists - PlaneJane</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Condensed:ital,wght@1,800&display=swap">
+<link rel="stylesheet" href="globals.css">
+<link rel="stylesheet" href="styleguide.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        "gc-moon-yellow": "var(--gc-moon-yellow)",
+        "gc-night-rider": "var(--gc-night-rider)",
+        "gc-noble": "var(--gc-noble)",
+        "gcs-cobalt": "var(--gcs-cobalt)",
+        "gcs-midnight": "var(--gcs-midnight)",
+        "gcs-sea-foam": "var(--gcs-sea-foam)"
+      },
+      fontFamily: {
+        "h1-48px": "var(--h1-48px-font-family)",
+        "h2-24px": "var(--h2-24px-font-family)",
+        "h3-18px": "var(--h3-18px-font-family)",
+        "h4-16px": "var(--h4-16px-font-family)",
+        "h5-14px": "var(--h5-14px-font-family)",
+        "h6-13px": "var(--h6-13px-font-family)",
+        "pull-quote": "var(--pull-quote-font-family)"
+      },
+      boxShadow: {
+        "shadow": "var(--shadow)"
+      }
+    }
+  },
+  plugins: []
+}
+</script>
+</head>
+<body class="m-0 min-h-full bg-white">
+<div class="flex flex-col items-start relative">
+
+<!-- Header -->
+<header class="px-80 py-5 bg-[#111111] border-b [border-bottom-style:solid] border-[#1d1d1f] flex flex-col items-center justify-center gap-5 relative self-stretch w-full flex-[0_0_auto]">
+  <div class="items-center justify-between flex px-5 py-0 relative self-stretch w-full flex-[0_0_auto] gap-6">
+    <a href="index.html" aria-label="PlaneJane home" class="inline-flex items-center justify-center gap-2.5 px-2.5 py-1 relative flex-[0_0_auto] [background:linear-gradient(0deg,rgba(238,28,37,1)_0%,rgba(238,28,37,1)_100%)]">
+      <span class="relative w-fit mt-[-1.00px] [text-shadow:0px_0px_40px_#000000cc] [font-family:'Roboto_Condensed-ExtraBoldItalic',Helvetica] font-extrabold italic text-white text-[28px] tracking-[-0.56px] leading-8 whitespace-nowrap shadow-shadow">PLANEJANE</span>
+    </a>
+    <nav aria-label="Primary" class="inline-flex items-center gap-6 relative flex-[0_0_auto]">
+      <a href="index.html#new-releases" class="inline-flex items-center gap-2 relative flex-[0_0_auto]">
+        <span class="relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-white text-base tracking-[0] leading-6 whitespace-nowrap">New Releases</span>
+      </a>
+      <a href="#" class="inline-flex items-center gap-2 relative flex-[0_0_auto]">
+        <span class="text-white text-base leading-6 relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium tracking-[0] whitespace-nowrap">Songs</span>
+      </a>
+      <a href="artists.html" class="inline-flex items-center gap-2 relative flex-[0_0_auto]">
+        <span class="text-[#ee1c25] text-base leading-6 relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium tracking-[0] whitespace-nowrap">Artists</span>
+      </a>
+      <a href="albums.html" class="inline-flex items-center gap-2 relative flex-[0_0_auto]">
+        <span class="relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-white text-base tracking-[0] leading-6 whitespace-nowrap">Albums</span>
+      </a>
+      <a href="#" class="inline-flex items-center gap-2 relative flex-[0_0_auto]">
+        <span class="text-white text-base leading-6 relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium tracking-[0] whitespace-nowrap">Videos</span>
+      </a>
+      <a href="#" class="inline-flex items-center gap-2 relative flex-[0_0_auto]">
+        <span class="text-white text-base leading-6 relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium tracking-[0] whitespace-nowrap">Shop</span>
+      </a>
+      <a href="contact.html" class="inline-flex items-center gap-2 relative flex-[0_0_auto]">
+        <span class="text-white text-base leading-6 relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium tracking-[0] whitespace-nowrap">Contact</span>
+      </a>
+    </nav>
+    <div class="inline-flex items-center gap-4 relative flex-[0_0_auto]">
+      <img class="w-6 h-6" src="img/account.svg" alt="Account" />
+      <img class="w-6 h-6" src="img/cart.svg" alt="Cart" />
+    </div>
+    <form class="flex w-[246px] items-center justify-between px-4 py-3 relative rounded-md border border-solid border-[#666666]" role="search" action="#">
+      <label for="site-search" class="sr-only">Search</label>
+      <input id="site-search" name="search" aria-label="Search" class="relative flex-1 min-w-0 mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-white text-base tracking-[0] leading-6 [background:transparent] border-[none] p-0 outline-none placeholder:text-white" placeholder="Search" type="search" />
+      <button type="submit" aria-label="Submit search" class="relative w-6 h-6 aspect-[1] flex items-center justify-center">
+        <span class="w-6 h-6 flex aspect-[1]">
+          <img class="flex-1 w-[19.29px]" src="img/search.svg" alt="" />
+        </span>
+      </button>
+    </form>
+  </div>
+</header>
+
+<main class="flex flex-col items-start relative self-stretch w-full">
+
+  <!-- Page Header -->
+  <section class="px-80 py-9 bg-[#111111] flex flex-col items-start gap-4 relative self-stretch w-full flex-[0_0_auto]">
+    <div class="flex items-center gap-2 px-5 py-0 relative self-stretch w-full flex-[0_0_auto]">
+      <div class="relative w-7 h-7 aspect-[1]">
+        <img class="absolute w-[75.00%] h-[87.30%] top-[12.70%] left-[25.00%]" src="img/Musical.svg" alt="" />
+      </div>
+      <h1 class="relative flex-1 mt-[-1.00px] [font-family:'Inter-Regular',Helvetica] font-normal text-white text-4xl tracking-[-0.72px] leading-10">Artists</h1>
+    </div>
+    <!-- Filter bar -->
+    <div class="flex items-center gap-3 px-5 py-0 relative self-stretch w-full flex-[0_0_auto] flex-wrap">
+      <button type="button" class="all-[unset] box-border inline-flex items-center gap-2 px-4 py-2 bg-[#ee1c25] rounded-md">
+        <span class="[font-family:'Inter-Medium',Helvetica] font-medium text-white text-sm tracking-[0] leading-5 whitespace-nowrap">All</span>
+      </button>
+      <button type="button" class="all-[unset] box-border inline-flex items-center gap-2 px-4 py-2 bg-[#333333] rounded-md">
+        <span class="[font-family:'Inter-Medium',Helvetica] font-medium text-white text-sm tracking-[0] leading-5 whitespace-nowrap">Hip-Hop</span>
+      </button>
+      <button type="button" class="all-[unset] box-border inline-flex items-center gap-2 px-4 py-2 bg-[#333333] rounded-md">
+        <span class="[font-family:'Inter-Medium',Helvetica] font-medium text-white text-sm tracking-[0] leading-5 whitespace-nowrap">R&amp;B</span>
+      </button>
+      <button type="button" class="all-[unset] box-border inline-flex items-center gap-2 px-4 py-2 bg-[#333333] rounded-md">
+        <span class="[font-family:'Inter-Medium',Helvetica] font-medium text-white text-sm tracking-[0] leading-5 whitespace-nowrap">Trap</span>
+      </button>
+      <button type="button" class="all-[unset] box-border inline-flex items-center gap-2 px-4 py-2 bg-[#333333] rounded-md">
+        <span class="[font-family:'Inter-Medium',Helvetica] font-medium text-white text-sm tracking-[0] leading-5 whitespace-nowrap">Rap</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Featured Artist -->
+  <section class="px-80 py-14 [background:linear-gradient(0deg,rgba(234,235,240,1)_0%,rgba(234,235,240,1)_100%)] flex flex-col items-start gap-2.5 relative self-stretch w-full flex-[0_0_auto]">
+    <div class="items-center gap-20 flex px-5 py-0 relative self-stretch w-full flex-[0_0_auto]">
+      <div class="flex flex-col w-[580px] items-start gap-6 relative">
+        <div class="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
+          <div class="flex gap-2 self-stretch w-full flex-[0_0_auto] items-center justify-center relative">
+            <div class="relative w-7 h-7 aspect-[1]">
+              <img class="absolute w-[78.12%] h-[87.50%] top-[12.50%] left-[21.88%]" src="img/DJ.svg" alt="" />
+            </div>
+            <div class="text-[#ee1c25] relative flex-1 mt-[-1.00px] [font-family:'Inter-Regular',Helvetica] font-normal text-lg tracking-[-0.36px] leading-7">Featured Artist</div>
+          </div>
+          <h2 class="relative self-stretch text-[#1d1d1f] text-4xl tracking-[-0.72px] leading-10 [font-family:'Inter-Regular',Helvetica] font-normal">Sean Leon</h2>
+          <div class="relative self-stretch [font-family:'Inter-Regular',Helvetica] font-normal text-[#1d1d1f] text-sm tracking-[-0.28px] leading-5">Toronto, Canada &nbsp;•&nbsp; Hip-Hop / R&amp;B</div>
+        </div>
+        <p class="relative self-stretch [font-family:'Inter-Regular',Helvetica] font-normal text-[#555555] text-base tracking-[0] leading-6">Sean Leon is a Toronto-based artist known for his dark, cinematic approach to hip-hop. Blending introspective lyricism with moody production, he has built a cult following with projects like IYRTITL and Starboy-era collaborations. His sound bridges the gap between underground rap and mainstream appeal.</p>
+        <div class="flex items-center gap-4 relative self-stretch w-full flex-[0_0_auto]">
+          <button type="button" class="all-[unset] box-border inline-flex items-center gap-2 px-6 py-3 bg-[#ee1c25] rounded-md">
+            <span class="[font-family:'Inter-Medium',Helvetica] font-medium text-white text-base tracking-[0] leading-6 whitespace-nowrap">VIEW PROFILE</span>
+          </button>
+          <button type="button" class="all-[unset] box-border inline-flex items-center gap-2 px-6 py-3 bg-[#333333] rounded-md">
+            <span class="[font-family:'Inter-Medium',Helvetica] font-medium text-white text-base tracking-[0] leading-6 whitespace-nowrap">VIEW ALBUMS</span>
+          </button>
+        </div>
+        <div class="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
+          <div class="flex gap-2 self-stretch w-full flex-[0_0_auto] items-center justify-center relative">
+            <div class="relative w-7 h-7 aspect-[1]">
+              <img class="absolute w-[75.00%] h-[87.30%] top-[12.70%] left-[25.00%]" src="img/Musical-black.svg" alt="" />
+            </div>
+            <div class="relative flex-1 [font-family:'Inter-Regular',Helvetica] font-normal text-[#1d1d1f] text-base tracking-[-0.32px] leading-6">Latest Releases</div>
+          </div>
+        </div>
+        <div class="flex items-start gap-5 relative self-stretch w-full flex-[0_0_auto]">
+          <article class="inline-flex flex-col items-start gap-4 relative flex-[0_0_auto]">
+            <img class="relative w-[180px] h-[180px] aspect-[1] object-cover" src="img/album-1.jpg" alt="Album artwork" />
+            <div class="flex flex-col w-[180px] items-start gap-3 relative flex-[0_0_auto]">
+              <h3 class="relative self-stretch mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-[#1d1d1f] text-lg tracking-[0] leading-7">IYRTITL</h3>
+              <div class="relative self-stretch [font-family:'Inter-Regular',Helvetica] font-normal text-[#666666] text-sm tracking-[0] leading-5">2016</div>
+            </div>
+          </article>
+          <article class="inline-flex flex-col items-start gap-4 relative flex-[0_0_auto]">
+            <img class="relative w-[180px] h-[180px] aspect-[1] object-cover" src="img/album-2.jpg" alt="Album artwork" />
+            <div class="flex flex-col w-[180px] items-start gap-3 relative flex-[0_0_auto]">
+              <h3 class="relative self-stretch mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-[#1d1d1f] text-lg tracking-[0] leading-7">Juice</h3>
+              <div class="relative self-stretch [font-family:'Inter-Regular',Helvetica] font-normal text-[#666666] text-sm tracking-[0] leading-5">Single</div>
+            </div>
+          </article>
+          <article class="inline-flex flex-col items-start gap-4 relative flex-[0_0_auto]">
+            <img class="relative w-[180px] h-[180px] aspect-[1] object-cover" src="img/album-3.jpg" alt="Album artwork" />
+            <div class="flex flex-col w-[180px] items-start gap-3 relative flex-[0_0_auto]">
+              <h3 class="relative self-stretch mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-[#1d1d1f] text-lg tracking-[0] leading-7">Dark Trap</h3>
+              <div class="relative self-stretch [font-family:'Inter-Regular',Helvetica] font-normal text-[#666666] text-sm tracking-[0] leading-5">EP</div>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div class="flex items-center justify-center gap-2.5 px-0 py-0 relative flex-1 grow self-stretch">
+        <img class="relative flex-1 grow h-full object-cover" src="img/featured-artist-bg.jpg" alt="Sean Leon portrait" />
+      </div>
+    </div>
+  </section>
+
+  <!-- All Artists Grid -->
+  <section class="flex flex-col items-center justify-center gap-5 px-80 py-9 relative self-stretch w-full flex-[0_0_auto] bg-[#111111]">
+    <div class="flex items-center justify-between px-5 py-0 relative self-stretch w-full flex-[0_0_auto]">
+      <div class="flex gap-2 items-center relative flex-[0_0_auto]">
+        <div class="relative w-7 h-7 aspect-[1]">
+          <img class="absolute w-[75.00%] h-[87.30%] top-[12.70%] left-[25.00%]" src="img/Musical.svg" alt="" />
+        </div>
+        <h2 class="relative w-fit mt-[-1.00px] [font-family:'Inter-Regular',Helvetica] font-normal text-white text-lg tracking-[-0.36px] leading-7">All Artists</h2>
+      </div>
+      <div class="[font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">Showing 10 artists</div>
+    </div>
+
+    <div class="flex-wrap items-start justify-between gap-[32px_40px] flex px-5 py-0 relative self-stretch w-full flex-[0_0_auto]">
+
+      <!-- Artist Card -->
+      <article class="flex flex-col w-[280px] items-start gap-4 relative">
+        <div class="relative w-[280px] h-[280px] overflow-hidden">
+          <img class="w-full h-full object-cover" src="img/album-1.jpg" alt="Scru Face Jean" />
+        </div>
+        <div class="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
+          <h3 class="relative self-stretch mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-white text-lg tracking-[0] leading-7">Scru Face Jean</h3>
+          <div class="relative self-stretch [font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">New York, USA &nbsp;•&nbsp; Hip-Hop</div>
+          <div class="flex items-center gap-3 relative self-stretch w-full flex-[0_0_auto]">
+            <div class="[font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">12 Albums</div>
+            <div class="[font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-[10px] leading-3">•</div>
+            <div class="[font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">48.2K followers</div>
+          </div>
+        </div>
+        <button type="button" class="all-[unset] box-border self-stretch flex items-center justify-center gap-2 px-4 py-2 bg-[#333333] rounded-md">
+          <span class="[font-family:'Inter-Medium',Helvetica] font-medium text-white text-sm tracking-[0] leading-5 whitespace-nowrap">VIEW ARTIST</span>
+        </button>
+      </article>
+
+      <article class="flex flex-col w-[280px] items-start gap-4 relative">
+        <div class="relative w-[280px] h-[280px] overflow-hidden">
+          <img class="w-full h-full object-cover" src="img/album-2.jpg" alt="Drakeo The Ruler" />
+        </div>
+        <div class="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
+          <h3 class="relative self-stretch mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-white text-lg tracking-[0] leading-7">Drakeo The Ruler</h3>
+          <div class="relative self-stretch [font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">Los Angeles, USA &nbsp;•&nbsp; Rap</div>
+          <div class="flex items-center gap-3 relative self-stretch w-full flex-[0_0_auto]">
+            <div class="[font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">8 Albums</div>
+            <div class="[font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-[10px] leading-3">•</div>
+            <div class="[font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">102.4K followers</div>
+          </div>
+        </div>
+        <button type="button" class="all-[unset] box-border self-stretch flex items-center justify-center gap-2 px-4 py-2 bg-[#333333] rounded-md">
+          <span class="[font-family:'Inter-Medium',Helvetica] font-medium text-white text-sm tracking-[0] leading-5 whitespace-nowrap">VIEW ARTIST</span>
+        </button>
+      </article>
+
+      <article class="flex flex-col w-[280px] items-start gap-4 relative">
+        <div class="relative w-[280px] h-[280px] overflow-hidden">
+          <img class="w-full h-full object-cover" src="img/album-3.jpg" alt="Big K.R.I.T." />
+        </div>
+        <div class="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
+          <h3 class="relative self-stretch mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-white text-lg tracking-[0] leading-7">Big K.R.I.T.</h3>
+          <div class="relative self-stretch [font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">Mississippi, USA &nbsp;•&nbsp; Hip-Hop</div>
+          <div class="flex items-center gap-3 relative self-stretch w-full flex-[0_0_auto]">
+            <div class="[font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">14 Albums</div>
+            <div class="[font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-[10px] leading-3">•</div>
+            <div class="[font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">215.7K followers</div>
+          </div>
+        </div>
+        <button type="button" class="all-[unset] box-border self-stretch flex items-center justify-center gap-2 px-4 py-2 bg-[#333333] rounded-md">
+          <span class="[font-family:'Inter-Medium',Helvetica] font-medium text-white text-sm tracking-[0] leading-5 whitespace-nowrap">VIEW ARTIST</span>
+        </button>
+      </article>
+
+      <article class="flex flex-col w-[280px] items-start gap-4 relative">
+        <div class="relative w-[280px] h-[280px] overflow-hidden">
+          <img class="w-full h-full object-cover" src="img/album-4.jpg" alt="Scotty ATL" />
+        </div>
+        <div class="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
+          <h3 class="relative self-stretch mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-white text-lg tracking-[0] leading-7">Scotty ATL</h3>
+          <div class="relative self-stretch [font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">Atlanta, USA &nbsp;•&nbsp; Trap</div>
+          <div class="flex items-center gap-3 relative self-stretch w-full flex-[0_0_auto]">
+            <div class="[font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">7 Albums</div>
+            <div class="[font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-[10px] leading-3">•</div>
+            <div class="[font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">67.3K followers</div>
+          </div>
+        </div>
+        <button type="button" class="all-[unset] box-border self-stretch flex items-center justify-center gap-2 px-4 py-2 bg-[#333333] rounded-md">
+          <span class="[font-family:'Inter-Medium',Helvetica] font-medium text-white text-sm tracking-[0] leading-5 whitespace-nowrap">VIEW ARTIST</span>
+        </button>
+      </article>
+
+      <article class="flex flex-col w-[280px] items-start gap-4 relative">
+        <div class="relative w-[280px] h-[280px] overflow-hidden">
+          <img class="w-full h-full object-cover" src="img/album-5.jpg" alt="G-Eazy" />
+        </div>
+        <div class="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
+          <h3 class="relative self-stretch mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-white text-lg tracking-[0] leading-7">G-Eazy</h3>
+          <div class="relative self-stretch [font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">Oakland, USA &nbsp;•&nbsp; Hip-Hop / Pop Rap</div>
+          <div class="flex items-center gap-3 relative self-stretch w-full flex-[0_0_auto]">
+            <div class="[font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">10 Albums</div>
+            <div class="[font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-[10px] leading-3">•</div>
+            <div class="[font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">1.2M followers</div>
+          </div>
+        </div>
+        <button type="button" class="all-[unset] box-border self-stretch flex items-center justify-center gap-2 px-4 py-2 bg-[#333333] rounded-md">
+          <span class="[font-family:'Inter-Medium',Helvetica] font-medium text-white text-sm tracking-[0] leading-5 whitespace-nowrap">VIEW ARTIST</span>
+        </button>
+      </article>
+
+      <article class="flex flex-col w-[280px] items-start gap-4 relative">
+        <div class="relative w-[280px] h-[280px] overflow-hidden">
+          <img class="w-full h-full object-cover" src="img/album-6.jpg" alt="Jeezy" />
+        </div>
+        <div class="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
+          <h3 class="relative self-stretch mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-white text-lg tracking-[0] leading-7">Jeezy</h3>
+          <div class="relative self-stretch [font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">Atlanta, USA &nbsp;•&nbsp; Trap / Rap</div>
+          <div class="flex items-center gap-3 relative self-stretch w-full flex-[0_0_auto]">
+            <div class="[font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">11 Albums</div>
+            <div class="[font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-[10px] leading-3">•</div>
+            <div class="[font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">876.5K followers</div>
+          </div>
+        </div>
+        <button type="button" class="all-[unset] box-border self-stretch flex items-center justify-center gap-2 px-4 py-2 bg-[#333333] rounded-md">
+          <span class="[font-family:'Inter-Medium',Helvetica] font-medium text-white text-sm tracking-[0] leading-5 whitespace-nowrap">VIEW ARTIST</span>
+        </button>
+      </article>
+
+      <article class="flex flex-col w-[280px] items-start gap-4 relative">
+        <div class="relative w-[280px] h-[280px] overflow-hidden">
+          <img class="w-full h-full object-cover" src="img/album-7.jpg" alt="Rich The Kid" />
+        </div>
+        <div class="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
+          <h3 class="relative self-stretch mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-white text-lg tracking-[0] leading-7">Rich The Kid</h3>
+          <div class="relative self-stretch [font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">Atlanta, USA &nbsp;•&nbsp; Trap</div>
+          <div class="flex items-center gap-3 relative self-stretch w-full flex-[0_0_auto]">
+            <div class="[font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">6 Albums</div>
+            <div class="[font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-[10px] leading-3">•</div>
+            <div class="[font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">543.2K followers</div>
+          </div>
+        </div>
+        <button type="button" class="all-[unset] box-border self-stretch flex items-center justify-center gap-2 px-4 py-2 bg-[#333333] rounded-md">
+          <span class="[font-family:'Inter-Medium',Helvetica] font-medium text-white text-sm tracking-[0] leading-5 whitespace-nowrap">VIEW ARTIST</span>
+        </button>
+      </article>
+
+      <article class="flex flex-col w-[280px] items-start gap-4 relative">
+        <div class="relative w-[280px] h-[280px] overflow-hidden">
+          <img class="w-full h-full object-cover" src="img/album-8.jpg" alt="Cool and the Gang" />
+        </div>
+        <div class="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
+          <h3 class="relative self-stretch mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-white text-lg tracking-[0] leading-7">Cool and the Gang</h3>
+          <div class="relative self-stretch [font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">New Jersey, USA &nbsp;•&nbsp; Funk / R&amp;B</div>
+          <div class="flex items-center gap-3 relative self-stretch w-full flex-[0_0_auto]">
+            <div class="[font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">16 Albums</div>
+            <div class="[font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-[10px] leading-3">•</div>
+            <div class="[font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">2.4M followers</div>
+          </div>
+        </div>
+        <button type="button" class="all-[unset] box-border self-stretch flex items-center justify-center gap-2 px-4 py-2 bg-[#333333] rounded-md">
+          <span class="[font-family:'Inter-Medium',Helvetica] font-medium text-white text-sm tracking-[0] leading-5 whitespace-nowrap">VIEW ARTIST</span>
+        </button>
+      </article>
+
+      <article class="flex flex-col w-[280px] items-start gap-4 relative">
+        <div class="relative w-[280px] h-[280px] overflow-hidden">
+          <img class="w-full h-full object-cover" src="img/featured-artist-bg.jpg" alt="Isaiah Rashad" />
+        </div>
+        <div class="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
+          <h3 class="relative self-stretch mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-white text-lg tracking-[0] leading-7">Isaiah Rashad</h3>
+          <div class="relative self-stretch [font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">Chattanooga, USA &nbsp;•&nbsp; Hip-Hop</div>
+          <div class="flex items-center gap-3 relative self-stretch w-full flex-[0_0_auto]">
+            <div class="[font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">5 Albums</div>
+            <div class="[font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-[10px] leading-3">•</div>
+            <div class="[font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">389.1K followers</div>
+          </div>
+        </div>
+        <button type="button" class="all-[unset] box-border self-stretch flex items-center justify-center gap-2 px-4 py-2 bg-[#333333] rounded-md">
+          <span class="[font-family:'Inter-Medium',Helvetica] font-medium text-white text-sm tracking-[0] leading-5 whitespace-nowrap">VIEW ARTIST</span>
+        </button>
+      </article>
+
+      <article class="flex flex-col w-[280px] items-start gap-4 relative">
+        <div class="relative w-[280px] h-[280px] overflow-hidden">
+          <img class="w-full h-full object-cover" src="img/section-bg.jpg" alt="iLoveMakonnen" />
+        </div>
+        <div class="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
+          <h3 class="relative self-stretch mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-white text-lg tracking-[0] leading-7">iLoveMakonnen</h3>
+          <div class="relative self-stretch [font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">Atlanta, USA &nbsp;•&nbsp; R&amp;B / Trap</div>
+          <div class="flex items-center gap-3 relative self-stretch w-full flex-[0_0_auto]">
+            <div class="[font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">9 Albums</div>
+            <div class="[font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-[10px] leading-3">•</div>
+            <div class="[font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">224.8K followers</div>
+          </div>
+        </div>
+        <button type="button" class="all-[unset] box-border self-stretch flex items-center justify-center gap-2 px-4 py-2 bg-[#333333] rounded-md">
+          <span class="[font-family:'Inter-Medium',Helvetica] font-medium text-white text-sm tracking-[0] leading-5 whitespace-nowrap">VIEW ARTIST</span>
+        </button>
+      </article>
+
+      <button class="all-[unset] box-border w-full flex items-center justify-center gap-2 px-6 py-3 relative bg-[#333333] rounded-md" type="button">
+        <div class="relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-white text-base tracking-[0] leading-6 whitespace-nowrap">LOAD MORE ARTISTS</div>
+      </button>
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="px-80 py-6 bg-white flex flex-col items-center justify-center gap-5 relative self-stretch w-full flex-[0_0_auto]">
+  <div class="items-center justify-between flex px-5 py-0 relative self-stretch w-full flex-[0_0_auto]">
+    <div class="inline-flex items-center gap-2 relative flex-[0_0_auto]">
+      <p class="relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-[#ee1c25] text-sm tracking-[0] leading-5 whitespace-nowrap">Copyright &copy; 2026 PlaneJane - ilovethehype | mymusic2loud | alwaysonfire LLC</p>
+    </div>
+    <nav aria-label="Footer" class="inline-flex items-center gap-6 relative flex-[0_0_auto]">
+      <a href="index.html#new-releases" class="inline-flex items-center gap-2 relative flex-[0_0_auto]">
+        <span class="relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-[#1d1d1f] text-sm tracking-[0] leading-5 whitespace-nowrap">New Releases</span>
+      </a>
+      <a href="#" class="inline-flex items-center gap-2 relative flex-[0_0_auto]">
+        <span class="text-[#1d1d1f] text-sm leading-5 relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium tracking-[0] whitespace-nowrap">Songs</span>
+      </a>
+      <a href="artists.html" class="inline-flex items-center gap-2 relative flex-[0_0_auto]">
+        <span class="text-[#1d1d1f] text-sm leading-5 relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium tracking-[0] whitespace-nowrap">Artists</span>
+      </a>
+      <a href="albums.html" class="inline-flex items-center gap-2 relative flex-[0_0_auto]">
+        <span class="relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-[#1d1d1f] text-sm tracking-[0] leading-5 whitespace-nowrap">Albums</span>
+      </a>
+      <a href="#" class="inline-flex items-center gap-2 relative flex-[0_0_auto]">
+        <span class="text-[#1d1d1f] text-sm leading-5 relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium tracking-[0] whitespace-nowrap">Videos</span>
+      </a>
+      <a href="#" class="inline-flex items-center gap-2 relative flex-[0_0_auto]">
+        <span class="text-[#1d1d1f] text-sm leading-5 relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium tracking-[0] whitespace-nowrap">Shop</span>
+      </a>
+      <a href="contact.html" class="inline-flex items-center gap-2 relative flex-[0_0_auto]">
+        <span class="text-[#1d1d1f] text-sm leading-5 relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium tracking-[0] whitespace-nowrap">Contact</span>
+      </a>
+    </nav>
+  </div>
+</footer>
+
+</div>
+</body>
+</html>
