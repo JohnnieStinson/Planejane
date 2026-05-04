@@ -1,0 +1,15 @@
+{
+  "name": "planejane-spotify-fetcher",
+  "version": "1.0.0",
+  "description": "Fetches new hip-hop releases from Spotify for PlaneJane",
+  "main": "spotify-fetcher.js",
+  "scripts": {
+    "fetch": "node spotify-fetcher.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
