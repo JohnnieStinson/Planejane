@@ -60,19 +60,19 @@ async function spotifyGet(token, url) {
 // ─── Search hip-hop albums across multiple terms ────────────────────────────
 
 async function searchHipHopAlbums(token) {
-  const terms = ['hip hop', 'rap', 'trap', 'drill'];
-  const results = await Promise.all(
-    terms.map(async term => {
-      console.log(`Searching: "${term}"...`);
-      const query = encodeURIComponent(term);
-      const data  = await spotifyGet(
-        token,
-        `https://api.spotify.com/v1/search?q=${query}&type=album&market=US&limit=50`
-      );
-      return data.albums.items;
-    })
-  );
-  return results.flat();
+  const terms = ['hip hop', 'rap', 'trap'];
+  const all   = [];
+  for (const term of terms) {
+    console.log(`Searching: "${term}"...`);
+    const query = encodeURIComponent(term);
+    const data  = await spotifyGet(
+      token,
+      `https://api.spotify.com/v1/search?q=${query}&type=album&market=US&limit=50`
+    );
+    all.push(...data.albums.items);
+    await new Promise(r => setTimeout(r, 300));
+  }
+  return all;
 }
 
 // ─── Get artist genres for an artist ID ─────────────────────────────────────
