@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PlaneJane</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Condensed:ital,wght@1,800&display=swap">
+  <link rel="stylesheet" href="globals.css">
+  <link rel="stylesheet" href="styleguide.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#ee1c25'
+          },
+          fontFamily: {
+            condensed: ["'Roboto Condensed'", "Helvetica", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-black text-white m-0 min-h-full">
+
+<!-- ========== HEADER ========== -->
+<header class="sticky top-0 z-50 bg-[#111111] border-b border-[#1d1d1f]">
+  <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-10 py-4 flex items-center justify-between gap-4">
+
+    <!-- Logo -->
+    <a href="index.html" aria-label="PlaneJane home" class="flex-shrink-0">
+      <img src="img/planejane-logo.svg" alt="PlaneJane" class="h-10" />
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav aria-label="Primary" class="hidden md:flex items-center gap-6 text-sm text-white/80">
+      <a href="#" class="hover:text-white transition-colors whitespace-nowrap">New Releases</a>
+      <a href="#" class="hover:text-white transition-colors">Songs</a>
+      <a href="artists.html" class="hover:text-white transition-colors">Artists</a>
+      <a href="albums.html" class="hover:text-white transition-colors">Albums</a>
+      <a href="#" class="hover:text-white transition-colors">Videos</a>
+      <a href="#" class="hover:text-white transition-colors">Shop</a>
+      <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
+    </nav>
+
+    <!-- Icons + Search -->
+    <div class="flex items-center gap-3 flex-shrink-0">
+      <img class="w-6 h-6 hidden sm:block" src="img/account.svg" alt="Account" />
+      <img class="w-6 h-6 hidden sm:block" src="img/cart.svg" alt="Cart" />
+      <form class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded border border-zinc-600 bg-transparent" role="search" action="#">
+        <label for="site-search" class="sr-only">Search</label>
+        <input id="site-search" name="search" type="search" placeholder="Search"
+          class="bg-transparent text-sm text-white outline-none placeholder:text-white/60 w-32" />
+        <button type="submit" aria-label="Submit search">
+          <img src="img/search.svg" alt="" class="w-4 h-4" />
+        </button>
+      </form>
+      <!-- Hamburger -->
+      <button id="menuBtn" aria-label="Open menu" aria-expanded="false"
+        class="md:hidden text-white text-2xl leading-none focus:outline-none">☰</button>
+    </div>
+
+  </div>
+
+  <!-- Mobile Nav -->
+  <div id="mobileNav" class="hidden md:hidden bg-[#111111] border-t border-zinc-800 px-4 pb-4 pt-3 flex flex-col gap-3 text-sm">
+    <a href="#" class="hover:text-primary transition-colors">New Releases</a>
+    <a href="#" class="hover:text-primary transition-colors">Songs</a>
+    <a href="artists.html" class="hover:text-primary transition-colors">Artists</a>
+    <a href="albums.html" class="hover:text-primary transition-colors">Albums</a>
+    <a href="#" class="hover:text-primary transition-colors">Videos</a>
+    <a href="#" class="hover:text-primary transition-colors">Shop</a>
+    <a href="contact.html" class="hover:text-primary transition-colors">Contact</a>
+    <form class="flex items-center gap-2 px-3 py-1.5 rounded border border-zinc-600 mt-1" role="search" action="#">
+      <input type="search" placeholder="Search"
+        class="bg-transparent text-sm text-white outline-none placeholder:text-white/60 flex-1" />
+      <button type="submit" aria-label="Submit search">
+        <img src="img/search.svg" alt="" class="w-4 h-4" />
+      </button>
+    </form>
+  </div>
+</header>
+
+<!-- ========== HERO ========== -->
+<section class="relative w-full h-[340px] sm:h-[440px] lg:h-[520px] overflow-hidden">
+  <img src="img/featured-artist-bg.jpg" alt="PlaneJane hero"
+    class="absolute inset-0 w-full h-full object-cover opacity-50" />
+  <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
+  <div class="relative max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-10 h-full flex items-center">
+    <div class="max-w-xl space-y-4">
+      <p class="text-primary text-xs sm:text-sm font-medium uppercase tracking-widest">Underground Music Archive</p>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight font-condensed">
+        New Drops, Daily.
+      </h2>
+      <p class="text-white/70 text-sm sm:text-base leading-relaxed">
+        Discover hip-hop albums, mixtapes, and underground releases in one place — your daily feed for new drops, upcoming projects, and artist discovery.
+      </p>
+      <a href="albums.html"
+        class="inline-block bg-primary hover:bg-red-700 text-white text-sm font-medium px-6 py-3 rounded transition-colors">
+        Browse Albums
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== MAIN ========== -->
+<main class="flex flex-col gap-0">
+
+  <!-- FEATURED VIDEO + NEW RELEASES -->
+  <section class="bg-black/40 px-4 sm:px-6 lg:px-10 xl:px-20 py-9">
+    <div class="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+
+      <!-- Video -->
+      <div class="lg:col-span-2 relative rounded-xl overflow-hidden bg-zinc-900">
+        <div class="aspect-video relative">
+          <img src="img/video.jpg" alt="Sean Leon - Juice video thumbnail" class="w-full h-full object-cover" />
+          <div class="absolute top-4 left-4 text-white text-sm bg-black/50 px-2 py-1 rounded">
+            Sean Leon - Juice
+          </div>
+          <button type="button" aria-label="Play Sean Leon - Juice"
+            class="absolute inset-0 flex items-center justify-center">
+            <img src="img/play.svg" alt="" class="w-20 h-20 hover:scale-105 transition-transform" />
+          </button>
+        </div>
+        <!-- Player bar -->
+        <div class="bg-[#1b1b1b] px-4 py-2">
+          <div class="flex items-center gap-1 mb-1">
+            <div class="w-20 h-2.5 bg-primary rounded-sm flex-shrink-0"></div>
+            <div class="flex-1 h-2.5 bg-zinc-600 rounded-sm"></div>
+            <div class="flex-1 h-2.5 bg-zinc-700 rounded-sm"></div>
+          </div>
+          <div class="flex items-center justify-between text-xs text-white/70">
+            <div class="flex items-center gap-4">
+              <img src="img/Down.svg" alt="Replay" class="w-5 h-5 opacity-70" />
+              <img src="img/Musical.svg" alt="" class="w-5 h-5 opacity-70" />
+              <time datetime="PT2S">0:02</time>
+              <span class="text-zinc-500">/ 4:20</span>
+            </div>
+            <img src="img/Up.svg" alt="Fullscreen" class="w-5 h-5 opacity-70" />
+          </div>
+        </div>
+      </div>
+
+      <!-- New Releases Sidebar -->
+      <aside class="flex flex-col gap-4">
+        <div class="flex items-center gap-2">
+          <img src="img/Musical.svg" alt="" class="w-6 h-6" />
+          <h2 class="text-lg font-semibold">New Releases</h2>
+        </div>
+
+        <article class="flex items-start gap-3">
+          <img src="img/image-1.jpg" alt="New Release artwork" class="w-20 h-20 object-cover rounded flex-shrink-0" />
+          <div class="flex-1 min-w-0">
+            <h3 class="font-medium text-base leading-snug">New Releases</h3>
+            <div class="flex items-center justify-between mt-2 text-zinc-400 text-sm">
+              <span>3,405 views</span><span>78 comments</span>
+            </div>
+          </div>
+        </article>
+        <div class="h-px bg-zinc-700"></div>
+        <article class="flex items-start gap-3">
+          <img src="img/image-2.jpg" alt="New Release artwork" class="w-20 h-20 object-cover rounded flex-shrink-0" />
+          <div class="flex-1 min-w-0">
+            <h3 class="font-medium text-base leading-snug">New Releases</h3>
+            <div class="flex items-center justify-between mt-2 text-zinc-400 text-sm">
+              <span>3,405 views</span><span>78 comments</span>
+            </div>
+          </div>
+        </article>
+        <div class="h-px bg-zinc-700"></div>
+        <article class="flex items-start gap-3">
+          <img src="img/image-3.jpg" alt="New Release artwork" class="w-20 h-20 object-cover rounded flex-shrink-0" />
+          <div class="flex-1 min-w-0">
+            <h3 class="font-medium text-base leading-snug">New Releases</h3>
+            <div class="flex items-center justify-between mt-2 text-zinc-400 text-sm">
+              <span>3,405 views</span><span>78 comments</span>
+            </div>
+          </div>
+        </article>
+
+        <button type="button"
+          class="w-full bg-zinc-800 hover:bg-zinc-700 py-2 rounded text-sm font-medium transition-colors">
+          VIEW MORE
+        </button>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- ALBUMS GRID -->
+  <section class="bg-[#111111] px-4 sm:px-6 lg:px-10 xl:px-20 py-9">
+    <div class="max-w-screen-xl mx-auto space-y-6">
+      <div id="albumGrid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6"></div>
+      <button type="button"
+        class="w-full bg-zinc-800 hover:bg-zinc-700 py-3 rounded text-sm font-medium transition-colors">
+        VIEW MORE
+      </button>
+    </div>
+  </section>
+
+  <!-- FEATURED ARTIST -->
+  <section class="bg-[#eaebf0] px-4 sm:px-6 lg:px-10 xl:px-20 py-14">
+    <div class="max-w-screen-xl mx-auto flex flex-col lg:flex-row items-center gap-12">
+
+      <!-- Text -->
+      <div class="flex-1 space-y-5 text-[#1d1d1f]">
+        <div>
+          <div class="flex items-center gap-2 mb-1">
+            <img src="img/DJ.svg" alt="" class="w-6 h-6" />
+            <span class="text-primary text-sm">Featured Artist</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-normal">Sean Leon</h2>
+          <p class="text-sm text-zinc-500 mt-1">Toronto, Canada</p>
+        </div>
+        <p class="text-[#555555] text-sm sm:text-base leading-relaxed">
+          Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? No? Well, that's what you see at a toy store. And you must think you're in a toy store, because you're here shopping for an infant named Jeb.<br /><br />
+          Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do. That's also clear. But for some reason, you and I react the exact same way to water.
+        </p>
+
+        <div>
+          <div class="flex items-center gap-2 mb-3">
+            <img src="img/Musical-black.svg" alt="" class="w-6 h-6" />
+            <span class="text-sm font-medium">New Releases</span>
+          </div>
+          <div class="grid grid-cols-3 gap-4">
+            <article>
+              <img src="img/album-1.jpg" alt="New Release" class="w-full aspect-square object-cover rounded" />
+              <h3 class="text-sm font-medium mt-2">New Releases</h3>
+              <p class="text-xs text-zinc-500">New Releases</p>
+            </article>
+            <article>
+              <img src="img/album-2.jpg" alt="New Release" class="w-full aspect-square object-cover rounded" />
+              <h3 class="text-sm font-medium mt-2">New Releases</h3>
+              <p class="text-xs text-zinc-500">New Releases</p>
+            </article>
+            <article>
+              <img src="img/album-3.jpg" alt="New Release" class="w-full aspect-square object-cover rounded" />
+              <h3 class="text-sm font-medium mt-2">New Releases</h3>
+              <p class="text-xs text-zinc-500">New Releases</p>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <!-- Artist image -->
+      <div class="w-full lg:w-[420px] flex-shrink-0">
+        <img src="img/featured-artist-bg.jpg" alt="Sean Leon portrait" class="w-full h-full object-cover rounded-xl" />
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FEATURED ALBUM -->
+  <section class="relative px-4 sm:px-6 lg:px-10 xl:px-20 py-14 overflow-hidden"
+    style="background: linear-gradient(0deg,rgba(0,0,0,0.4),rgba(0,0,0,0.4)),linear-gradient(0deg,rgba(231,71,59,1),rgba(231,71,59,1))">
+    <div class="max-w-screen-xl mx-auto flex flex-col lg:flex-row-reverse items-center gap-12">
+
+      <!-- Text -->
+      <div class="flex-1 space-y-5 text-white">
+        <div>
+          <div class="flex items-center gap-2 mb-1">
+            <img src="img/Musical.svg" alt="" class="w-6 h-6" />
+            <span class="text-sm opacity-80">Featured Album</span>
+          </div>
+          <div class="flex items-start justify-between gap-4">
+            <h2 class="text-3xl sm:text-4xl font-normal">Drink More Water 5</h2>
+            <div class="text-right flex-shrink-0">
+              <img src="img/Up.svg" alt="" class="w-4 h-4 ml-auto" />
+              <p class="text-2xl font-bold">70%</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap items-center gap-2 mt-1 text-sm opacity-80">
+            <span>Isaiah Rashad</span><span>•</span>
+            <span>72 views</span><span>•</span>
+            <span>12 comments</span><span>•</span>
+            <span>40,073 downloads</span>
+          </div>
+        </div>
+        <p class="text-sm sm:text-base leading-relaxed opacity-80">
+          Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? No? Well, that's what you see at a toy store.<br /><br />
+          Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do.
+        </p>
+      </div>
+
+      <!-- Album image -->
+      <div class="w-full lg:w-[360px] flex-shrink-0 flex items-center justify-center px-8 lg:px-12">
+        <img src="img/featured-album-bg.jpg" alt="Drink More Water 5 album cover"
+          class="w-full aspect-square object-cover shadow-2xl" />
+      </div>
+
+    </div>
+  </section>
+
+  <!-- COUNTDOWN TIMER -->
+  <section class="bg-[#111111] px-4 sm:px-6 lg:px-10 xl:px-20 py-9">
+    <div class="max-w-screen-xl mx-auto">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <article class="flex items-start gap-4">
+          <img src="img/section-bg.jpg" alt="Upcoming release artwork"
+            class="w-[140px] sm:w-[160px] h-[140px] sm:h-[160px] object-cover flex-shrink-0" />
+          <div class="flex flex-col justify-between h-[140px] sm:h-[160px]">
+            <div>
+              <h2 class="font-medium text-white text-lg leading-snug">New Releases</h2>
+              <p class="text-zinc-400 text-sm mt-1">New Releases</p>
+            </div>
+            <div>
+              <time id="countdown1" class="text-3xl font-bold text-white block">00:00:00</time>
+              <p class="text-zinc-600 text-xl font-bold">hrs:min:sec</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="flex items-start gap-4">
+          <img src="img/album-4.jpg" alt="Upcoming release artwork"
+            class="w-[140px] sm:w-[160px] h-[140px] sm:h-[160px] object-cover flex-shrink-0" />
+          <div class="flex flex-col justify-between h-[140px] sm:h-[160px]">
+            <div>
+              <h2 class="font-medium text-white text-lg leading-snug">New Releases</h2>
+              <p class="text-zinc-400 text-sm mt-1">New Releases</p>
+            </div>
+            <div>
+              <time id="countdown2" class="text-3xl font-bold text-white block">00:00:00</time>
+              <p class="text-zinc-600 text-xl font-bold">hrs:min:sec</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="flex items-start gap-4">
+          <img src="img/album-5.jpg" alt="Upcoming release artwork"
+            class="w-[140px] sm:w-[160px] h-[140px] sm:h-[160px] object-cover flex-shrink-0" />
+          <div class="flex flex-col justify-between h-[140px] sm:h-[160px]">
+            <div>
+              <h2 class="font-medium text-white text-lg leading-snug">New Releases</h2>
+              <p class="text-zinc-400 text-sm mt-1">New Releases</p>
+            </div>
+            <div>
+              <time id="countdown3" class="text-3xl font-bold text-white block">00:00:00</time>
+              <p class="text-zinc-600 text-xl font-bold">hrs:min:sec</p>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer class="bg-white px-4 sm:px-6 lg:px-10 xl:px-20 py-6">
+  <div class="max-w-screen-xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+    <p class="text-primary text-sm font-medium text-center sm:text-left">
+      Copyright &copy; 2026 PlaneJane - ilovethehype | mymusic2loud | alwaysonfire LLC
+    </p>
+    <nav aria-label="Footer" class="flex flex-wrap justify-center gap-4 text-sm font-medium text-[#1d1d1f]">
+      <a href="#" class="hover:text-primary transition-colors">New Releases</a>
+      <a href="#" class="hover:text-primary transition-colors">Songs</a>
+      <a href="artists.html" class="hover:text-primary transition-colors">Artists</a>
+      <a href="albums.html" class="hover:text-primary transition-colors">Albums</a>
+      <a href="#" class="hover:text-primary transition-colors">Videos</a>
+      <a href="#" class="hover:text-primary transition-colors">Shop</a>
+      <a href="contact.html" class="hover:text-primary transition-colors">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+<!-- ========== SCRIPTS ========== -->
+<script>
+  // Mobile menu toggle
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileNav = document.getElementById('mobileNav');
+  menuBtn.addEventListener('click', () => {
+    const isOpen = !mobileNav.classList.contains('hidden');
+    mobileNav.classList.toggle('hidden', isOpen);
+    menuBtn.setAttribute('aria-expanded', String(!isOpen));
+    menuBtn.textContent = isOpen ? '☰' : '✕';
+  });
+
+  // Albums data
+  const albums = [
+    { title: "Scru Face Jean - Another Night [New Mixtape]", artist: "Scru Face Jean",       cover: "img/album-1.jpg" },
+    { title: "I Am Mr. Mosley",                              artist: "Drakeo The Ruler",       cover: "img/album-2.jpg" },
+    { title: "It's Better This Way",                         artist: "Big K.R.I.T.",            cover: "img/album-3.jpg" },
+    { title: "The Cooligan: Death of My Teenage Mind, Pt II",artist: "Scotty ATL & Honey Cocaine", cover: "img/album-4.jpg" },
+    { title: "These Things Really Do Happen When It's Dark", artist: "G-Eazy",                cover: "img/album-5.jpg" },
+    { title: "Jeezy - Politically Correct EP",               artist: "Jeezy tha Snowman",      cover: "img/album-6.jpg" },
+    { title: "Rich The Kid & iLoveMakonnen - Whip It",       artist: "Rich The Kid",           cover: "img/album-7.jpg" },
+    { title: "Alliance & Loyalty",                           artist: "Cool and the Gang",       cover: "img/album-8.jpg" }
+  ];
+
+  const grid = document.getElementById('albumGrid');
+  grid.innerHTML = albums.map(a => `
+    <article class="flex flex-col gap-3">
+      <img src="${a.cover}" alt="${a.title}" class="w-full aspect-square object-cover rounded" />
+      <div>
+        <h2 class="text-sm sm:text-base font-medium text-white leading-snug">${a.title}</h2>
+        <p class="text-zinc-400 text-xs sm:text-sm mt-1">${a.artist}</p>
+      </div>
+    </article>
+  `).join('');
+
+  // Countdown timers — targets: 3 upcoming release dates
+  const targets = [
+    new Date('2026-05-20T00:00:00'),
+    new Date('2026-06-01T00:00:00'),
+    new Date('2026-06-15T00:00:00')
+  ];
+  const countdownEls = [
+    document.getElementById('countdown1'),
+    document.getElementById('countdown2'),
+    document.getElementById('countdown3')
+  ];
+
+  function pad(n) { return String(n).padStart(2, '0'); }
+
+  function updateCountdowns() {
+    const now = new Date();
+    targets.forEach((target, i) => {
+      const diff = Math.max(0, target - now);
+      const hrs  = Math.floor(diff / 3600000);
+      const mins = Math.floor((diff % 3600000) / 60000);
+      const secs = Math.floor((diff % 60000) / 1000);
+      countdownEls[i].textContent = `${pad(hrs)}:${pad(mins)}:${pad(secs)}`;
+    });
+  }
+
+  updateCountdowns();
+  setInterval(updateCountdowns, 1000);
+</script>
+
+</body>
+</html>
