@@ -53,7 +53,10 @@ async function spotifyGet(token, url) {
   const res = await fetch(url, {
     headers: { Authorization: `Bearer ${token}` }
   });
-  if (!res.ok) throw new Error(`Spotify request failed: ${url} → ${res.status}`);
+  if (!res.ok) {
+    const body = await res.text();
+    throw new Error(`Spotify request failed: ${url} → ${res.status}\n${body}`);
+  }
   return res.json();
 }
 
