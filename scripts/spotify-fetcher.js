@@ -57,27 +57,22 @@ async function spotifyGet(token, url) {
   return res.json();
 }
 
-// ─── Fetch new releases ─────────────────────────────────────────────────────
-
-async function fetchNewReleases(token) {
-  console.log('Fetching new releases...');
-  const data = await spotifyGet(
-    token,
-    'https://api.spotify.com/v1/browse/new-releases?limit=50&country=US'
-  );
-  return data.albums.items;
-}
-
-// ─── Search for hip-hop new releases ───────────────────────────────────────
+// ─── Search hip-hop albums across multiple terms ────────────────────────────
 
 async function searchHipHopAlbums(token) {
-  console.log('Searching hip-hop albums...');
-  const query = encodeURIComponent('hip hop');
-  const data  = await spotifyGet(
-    token,
-    `https://api.spotify.com/v1/search?q=${query}&type=album&market=US&limit=50`
+  const terms = ['hip hop', 'rap', 'trap', 'drill'];
+  const results = await Promise.all(
+    terms.map(async term => {
+      console.log(`Searching: "${term}"...`);
+      const query = encodeURIComponent(term);
+      const data  = await spotifyGet(
+        token,
+        `https://api.spotify.com/v1/search?q=${query}&type=album&market=US&limit=50`
+      );
+      return data.albums.items;
+    })
   );
-  return data.albums.items;
+  return results.flat();
 }
 
 // ─── Get artist genres for an artist ID ─────────────────────────────────────
@@ -148,13 +143,9 @@ async function main() {
   const token = await getAccessToken();
   console.log('Access token obtained.');
 
-  // Pull from both endpoints and merge
-  const [newReleases, searchResults] = await Promise.all([
-    fetchNewReleases(token),
-    searchHipHopAlbums(token)
-  ]);
-
-  const combined = dedupe([...newReleases, ...searchResults]);
+  // Pull from search queries
+  const searchResults = await searchHipHopAlbums(token);
+  const combined = dedupe(searchResults);
   console.log(`Combined pool: ${combined.length} albums. Checking genres...`);
 
   // Fetch artist genres and filter for hip-hop (batch with small delay to avoid rate limits)
@@ -163,9 +154,7 @@ async function main() {
     const artistId = album.artists[0]?.id;
     const genres   = artistId ? await getArtistGenres(token, artistId) : [];
 
-    // Include if search surfaced it as hip-hop OR artist genres match
-    const fromSearch = searchResults.some(s => s.id === album.id);
-    if (fromSearch || isHipHop(genres)) {
+    if (isHipHop(genres) || searchResults.some(s => s.id === album.id)) {
       hiphopAlbums.push(formatAlbum(album, genres));
     }
 
