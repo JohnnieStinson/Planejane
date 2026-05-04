@@ -70,7 +70,7 @@ async function searchHipHopAlbums(token) {
     const query = encodeURIComponent(term);
     const data  = await spotifyGet(
       token,
-      `https://api.spotify.com/v1/search?q=${query}&type=album&market=US&limit=50`
+      `https://api.spotify.com/v1/search?q=${query}&type=album&market=US&limit=20`
     );
     all.push(...data.albums.items);
     await new Promise(r => setTimeout(r, 300));
