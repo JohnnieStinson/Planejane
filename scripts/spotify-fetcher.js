@@ -72,7 +72,7 @@ async function fetchNewReleases(token) {
 
 async function searchHipHopAlbums(token) {
   console.log('Searching hip-hop albums...');
-  const query = encodeURIComponent('tag:new genre:"hip-hop"');
+  const query = encodeURIComponent('genre:"hip hop"');
   const data  = await spotifyGet(
     token,
     `https://api.spotify.com/v1/search?q=${query}&type=album&market=US&limit=50`
