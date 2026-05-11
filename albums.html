@@ -1,372 +1,320 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta charset="utf-8" />
-<title>Albums - PlaneJane</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Condensed:ital,wght@1,800&display=swap">
-<link rel="stylesheet" href="globals.css">
-<link rel="stylesheet" href="styleguide.css">
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-tailwind.config = {
-  theme: {
-    extend: {
-      colors: {
-        "gc-moon-yellow": "var(--gc-moon-yellow)",
-        "gc-night-rider": "var(--gc-night-rider)",
-        "gc-noble": "var(--gc-noble)",
-        "gcs-cobalt": "var(--gcs-cobalt)",
-        "gcs-midnight": "var(--gcs-midnight)",
-        "gcs-sea-foam": "var(--gcs-sea-foam)"
-      },
-      fontFamily: {
-        "h1-48px": "var(--h1-48px-font-family)",
-        "h2-24px": "var(--h2-24px-font-family)",
-        "h3-18px": "var(--h3-18px-font-family)",
-        "h4-16px": "var(--h4-16px-font-family)",
-        "h5-14px": "var(--h5-14px-font-family)",
-        "h6-13px": "var(--h6-13px-font-family)",
-        "pull-quote": "var(--pull-quote-font-family)"
-      },
-      boxShadow: {
-        "shadow": "var(--shadow)"
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Albums - PlaneJane</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Condensed:ital,wght@1,800&display=swap">
+  <link rel="stylesheet" href="globals.css">
+  <link rel="stylesheet" href="styleguide.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { primary: '#ee1c25' },
+          fontFamily: { condensed: ["'Roboto Condensed'", 'Helvetica', 'sans-serif'] }
+        }
       }
     }
-  },
-  plugins: []
-}
-</script>
+  </script>
 </head>
-<body class="m-0 min-h-full bg-white">
-<div class="flex flex-col items-start relative">
 
-<!-- Header -->
-<header class="px-80 py-5 bg-[#111111] border-b [border-bottom-style:solid] border-[#1d1d1f] flex flex-col items-center justify-center gap-5 relative self-stretch w-full flex-[0_0_auto]">
-  <div class="items-center justify-between flex px-5 py-0 relative self-stretch w-full flex-[0_0_auto] gap-6">
-    <a href="index.html" aria-label="PlaneJane home" class="inline-flex items-center justify-center gap-2.5 px-2.5 py-1 relative flex-[0_0_auto] [background:linear-gradient(0deg,rgba(238,28,37,1)_0%,rgba(238,28,37,1)_100%)]">
-      <span class="relative w-fit mt-[-1.00px] [text-shadow:0px_0px_40px_#000000cc] [font-family:'Roboto_Condensed-ExtraBoldItalic',Helvetica] font-extrabold italic text-white text-[28px] tracking-[-0.56px] leading-8 whitespace-nowrap shadow-shadow">PLANEJANE</span>
+<body class="bg-black text-white m-0 min-h-full">
+
+<!-- HEADER -->
+<header class="sticky top-0 z-50 bg-[#111111] border-b border-[#1d1d1f]">
+  <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-10 py-4 flex items-center justify-between gap-4">
+    <a href="index.html" aria-label="PlaneJane home" class="flex-shrink-0 inline-flex items-center bg-primary px-2.5 py-1">
+      <span class="font-extrabold italic text-white text-[28px] tracking-[-0.56px] leading-8 whitespace-nowrap font-condensed" style="text-shadow:0px 0px 40px #000000cc">PLANEJANE</span>
     </a>
-    <nav aria-label="Primary" class="inline-flex items-center gap-6 relative flex-[0_0_auto]">
-      <a href="index.html#new-releases" class="inline-flex items-center gap-2 relative flex-[0_0_auto]">
-        <span class="relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-white text-base tracking-[0] leading-6 whitespace-nowrap">New Releases</span>
-      </a>
-      <a href="#" class="inline-flex items-center gap-2 relative flex-[0_0_auto]">
-        <span class="text-white text-base leading-6 relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium tracking-[0] whitespace-nowrap">Songs</span>
-      </a>
-      <a href="artists.html" class="inline-flex items-center gap-2 relative flex-[0_0_auto]">
-        <span class="text-white text-base leading-6 relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium tracking-[0] whitespace-nowrap">Artists</span>
-      </a>
-      <a href="albums.html" class="inline-flex items-center gap-2 relative flex-[0_0_auto]">
-        <span class="text-[#ee1c25] text-base leading-6 relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium tracking-[0] whitespace-nowrap">Albums</span>
-      </a>
-      <a href="#" class="inline-flex items-center gap-2 relative flex-[0_0_auto]">
-        <span class="text-white text-base leading-6 relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium tracking-[0] whitespace-nowrap">Videos</span>
-      </a>
-      <a href="#" class="inline-flex items-center gap-2 relative flex-[0_0_auto]">
-        <span class="text-white text-base leading-6 relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium tracking-[0] whitespace-nowrap">Shop</span>
-      </a>
-      <a href="contact.html" class="inline-flex items-center gap-2 relative flex-[0_0_auto]">
-        <span class="text-white text-base leading-6 relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium tracking-[0] whitespace-nowrap">Contact</span>
-      </a>
+    <nav aria-label="Primary" class="hidden md:flex items-center gap-6 text-sm text-white/80">
+      <a href="#" class="hover:text-white transition-colors whitespace-nowrap">New Releases</a>
+      <a href="#" class="hover:text-white transition-colors">Songs</a>
+      <a href="artists.html" class="hover:text-white transition-colors">Artists</a>
+      <a href="albums.html" class="text-primary font-medium">Albums</a>
+      <a href="#" class="hover:text-white transition-colors">Videos</a>
+      <a href="#" class="hover:text-white transition-colors">Shop</a>
+      <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
     </nav>
-    <div class="inline-flex items-center gap-4 relative flex-[0_0_auto]">
-      <img class="w-6 h-6" src="img/account.svg" alt="Account" />
-      <img class="w-6 h-6" src="img/cart.svg" alt="Cart" />
+    <div class="flex items-center gap-3 flex-shrink-0">
+      <img class="w-6 h-6 hidden sm:block" src="img/account.svg" alt="Account" />
+      <img class="w-6 h-6 hidden sm:block" src="img/cart.svg" alt="Cart" />
+      <form class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded border border-zinc-600" role="search" action="#">
+        <label for="site-search" class="sr-only">Search</label>
+        <input id="site-search" name="search" type="search" placeholder="Search"
+          class="bg-transparent text-sm text-white outline-none placeholder:text-white/60 w-32" />
+        <button type="submit" aria-label="Submit search">
+          <img src="img/search.svg" alt="" class="w-4 h-4" />
+        </button>
+      </form>
+      <button id="menuBtn" aria-label="Open menu" aria-expanded="false"
+        class="md:hidden text-white text-2xl leading-none focus:outline-none">☰</button>
     </div>
-    <form class="flex w-[246px] items-center justify-between px-4 py-3 relative rounded-md border border-solid border-[#666666]" role="search" action="#">
-      <label for="site-search" class="sr-only">Search</label>
-      <input id="site-search" name="search" aria-label="Search" class="relative flex-1 min-w-0 mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-white text-base tracking-[0] leading-6 [background:transparent] border-[none] p-0 outline-none placeholder:text-white" placeholder="Search" type="search" />
-      <button type="submit" aria-label="Submit search" class="relative w-6 h-6 aspect-[1] flex items-center justify-center">
-        <span class="w-6 h-6 flex aspect-[1]">
-          <img class="flex-1 w-[19.29px]" src="img/search.svg" alt="" />
-        </span>
+  </div>
+  <div id="mobileNav" class="hidden md:hidden bg-[#111111] border-t border-zinc-800 px-4 pb-4 pt-3 flex flex-col gap-3 text-sm">
+    <a href="#" class="hover:text-primary transition-colors">New Releases</a>
+    <a href="#" class="hover:text-primary transition-colors">Songs</a>
+    <a href="artists.html" class="hover:text-primary transition-colors">Artists</a>
+    <a href="albums.html" class="text-primary font-medium">Albums</a>
+    <a href="#" class="hover:text-primary transition-colors">Videos</a>
+    <a href="#" class="hover:text-primary transition-colors">Shop</a>
+    <a href="contact.html" class="hover:text-primary transition-colors">Contact</a>
+    <form class="flex items-center gap-2 px-3 py-1.5 rounded border border-zinc-600 mt-1" role="search" action="#">
+      <input type="search" placeholder="Search"
+        class="bg-transparent text-sm text-white outline-none placeholder:text-white/60 flex-1" />
+      <button type="submit" aria-label="Submit search">
+        <img src="img/search.svg" alt="" class="w-4 h-4" />
       </button>
     </form>
   </div>
 </header>
 
-<main class="flex flex-col items-start relative self-stretch w-full">
+<main>
 
-  <!-- Page Header -->
-  <section class="px-80 py-9 bg-[#111111] flex flex-col items-start gap-4 relative self-stretch w-full flex-[0_0_auto]">
-    <div class="flex items-center gap-2 px-5 py-0 relative self-stretch w-full flex-[0_0_auto]">
-      <div class="relative w-7 h-7 aspect-[1]">
-        <img class="absolute w-[75.00%] h-[87.30%] top-[12.70%] left-[25.00%]" src="img/Musical.svg" alt="" />
+  <!-- PAGE HEADER -->
+  <section class="bg-[#111111] px-4 sm:px-6 lg:px-10 xl:px-20 py-9">
+    <div class="max-w-screen-xl mx-auto space-y-5">
+      <div class="flex items-center gap-2">
+        <img src="img/Musical.svg" alt="" class="w-7 h-7" />
+        <h1 class="text-4xl font-normal tracking-tight">Albums</h1>
       </div>
-      <h1 class="relative flex-1 mt-[-1.00px] [font-family:'Inter-Regular',Helvetica] font-normal text-white text-4xl tracking-[-0.72px] leading-10">Albums</h1>
-    </div>
-    <!-- Sort / Filter bar -->
-    <div class="flex items-center justify-between px-5 py-0 relative self-stretch w-full flex-[0_0_auto]">
-      <div class="flex items-center gap-3 flex-wrap">
-        <button type="button" class="all-[unset] box-border inline-flex items-center gap-2 px-4 py-2 bg-[#ee1c25] rounded-md">
-          <span class="[font-family:'Inter-Medium',Helvetica] font-medium text-white text-sm tracking-[0] leading-5 whitespace-nowrap">All</span>
-        </button>
-        <button type="button" class="all-[unset] box-border inline-flex items-center gap-2 px-4 py-2 bg-[#333333] rounded-md">
-          <span class="[font-family:'Inter-Medium',Helvetica] font-medium text-white text-sm tracking-[0] leading-5 whitespace-nowrap">Mixtapes</span>
-        </button>
-        <button type="button" class="all-[unset] box-border inline-flex items-center gap-2 px-4 py-2 bg-[#333333] rounded-md">
-          <span class="[font-family:'Inter-Medium',Helvetica] font-medium text-white text-sm tracking-[0] leading-5 whitespace-nowrap">EPs</span>
-        </button>
-        <button type="button" class="all-[unset] box-border inline-flex items-center gap-2 px-4 py-2 bg-[#333333] rounded-md">
-          <span class="[font-family:'Inter-Medium',Helvetica] font-medium text-white text-sm tracking-[0] leading-5 whitespace-nowrap">LPs</span>
-        </button>
-        <button type="button" class="all-[unset] box-border inline-flex items-center gap-2 px-4 py-2 bg-[#333333] rounded-md">
-          <span class="[font-family:'Inter-Medium',Helvetica] font-medium text-white text-sm tracking-[0] leading-5 whitespace-nowrap">Upcoming</span>
-        </button>
-      </div>
-      <div class="flex items-center gap-3 relative flex-[0_0_auto]">
-        <span class="[font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">Sort by:</span>
-        <select class="[font-family:'Inter-Medium',Helvetica] font-medium text-white text-sm tracking-[0] leading-5 bg-[#333333] border-none rounded-md px-3 py-2 outline-none">
-          <option>Newest First</option>
-          <option>Oldest First</option>
-          <option>Most Downloads</option>
-          <option>Most Views</option>
-        </select>
-      </div>
-    </div>
-  </section>
-
-  <!-- Featured Album -->
-  <section class="px-80 py-14 [background:linear-gradient(0deg,rgba(0,0,0,0.4)_0%,rgba(0,0,0,0.4)_100%),linear-gradient(0deg,rgba(231,71,59,1)_0%,rgba(231,71,59,1)_100%)] flex flex-col items-start gap-2.5 relative self-stretch w-full flex-[0_0_auto]">
-    <div class="items-center justify-end gap-20 flex px-5 py-0 relative self-stretch w-full flex-[0_0_auto]">
-      <div class="flex items-center justify-center gap-2.5 px-[50px] py-0 relative flex-1 grow">
-        <img class="relative flex-1 grow aspect-[1] object-cover" src="img/featured-album-bg.jpg" alt="Drink More Water 5 album cover" />
-      </div>
-      <div class="flex flex-col w-[580px] items-start gap-6 relative">
-        <div class="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
-          <div class="flex gap-2 self-stretch w-full flex-[0_0_auto] items-center justify-center relative">
-            <div class="relative w-7 h-7 aspect-[1]">
-              <img class="absolute w-[81.25%] h-[90.62%] top-[9.38%] left-[18.75%]" src="img/Musical.svg" alt="" />
-            </div>
-            <div class="text-white relative flex-1 mt-[-1.00px] [font-family:'Inter-Regular',Helvetica] font-normal text-lg tracking-[-0.36px] leading-7">Featured Album</div>
-          </div>
-          <div class="items-center gap-2.5 flex relative self-stretch w-full flex-[0_0_auto]">
-            <h2 class="relative flex-1 mt-[-1.00px] [font-family:'Inter-Regular',Helvetica] font-normal text-white text-4xl tracking-[-0.72px] leading-10">Drink More Water 5</h2>
-            <div class="inline-flex flex-col items-end relative flex-[0_0_auto]">
-              <div class="inline-flex h-4 gap-0.5 items-center justify-center relative">
-                <div class="relative w-4 h-4 aspect-[1]">
-                  <img class="absolute w-[78.81%] h-[87.21%] top-[12.79%] left-[21.19%]" src="img/Up.svg" alt="" />
-                </div>
-              </div>
-              <div class="relative w-fit [font-family:'Inter-Bold',Helvetica] font-bold text-white text-2xl tracking-[-0.48px] leading-6 whitespace-nowrap">70%</div>
-            </div>
-          </div>
-          <div class="flex items-center gap-2 relative self-stretch w-full flex-[0_0_auto]">
-            <div class="relative w-fit mt-[-1.00px] [font-family:'Inter-Regular',Helvetica] font-normal text-white text-sm tracking-[-0.28px] leading-5 whitespace-nowrap">Isaiah Rashad</div>
-            <div class="relative w-fit [font-family:'Inter-Regular',Helvetica] font-normal text-white text-[10px] tracking-[-0.20px] leading-3 whitespace-nowrap">•</div>
-            <div class="relative w-fit mt-[-1.00px] [font-family:'Inter-Regular',Helvetica] font-normal text-white text-sm tracking-[-0.28px] leading-5 whitespace-nowrap">72 views</div>
-            <div class="relative w-fit [font-family:'Inter-Regular',Helvetica] font-normal text-white text-[10px] tracking-[-0.20px] leading-3 whitespace-nowrap">•</div>
-            <div class="relative w-fit mt-[-1.00px] [font-family:'Inter-Regular',Helvetica] font-normal text-white text-sm tracking-[-0.28px] leading-5 whitespace-nowrap">12 comments</div>
-            <div class="relative w-fit [font-family:'Inter-Regular',Helvetica] font-normal text-white text-[10px] tracking-[-0.20px] leading-3 whitespace-nowrap">•</div>
-            <div class="relative w-fit mt-[-1.00px] [font-family:'Inter-Regular',Helvetica] font-normal text-white text-sm tracking-[-0.28px] leading-5 whitespace-nowrap">40,073 downloads</div>
-          </div>
+      <!-- Filter / Sort bar -->
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div class="flex items-center gap-2 flex-wrap">
+          <button type="button" class="px-4 py-2 bg-primary text-white text-sm font-medium rounded-md">All</button>
+          <button type="button" class="px-4 py-2 bg-zinc-800 hover:bg-zinc-700 text-white text-sm font-medium rounded-md transition-colors">Mixtapes</button>
+          <button type="button" class="px-4 py-2 bg-zinc-800 hover:bg-zinc-700 text-white text-sm font-medium rounded-md transition-colors">EPs</button>
+          <button type="button" class="px-4 py-2 bg-zinc-800 hover:bg-zinc-700 text-white text-sm font-medium rounded-md transition-colors">LPs</button>
+          <button type="button" class="px-4 py-2 bg-zinc-800 hover:bg-zinc-700 text-white text-sm font-medium rounded-md transition-colors">Upcoming</button>
         </div>
-        <p class="relative self-stretch [font-family:'Inter-Regular',Helvetica] font-normal text-white text-base tracking-[0] leading-6">Isaiah Rashad returns with the highly anticipated fifth installment of his Drink More Water series. Featuring soulful production and sharp lyricism, this project cements Rashad's reputation as one of hip-hop's most cerebral and consistent voices. Stream or download now exclusively on PlaneJane.</p>
-        <div class="flex items-center gap-4 relative self-stretch w-full flex-[0_0_auto]">
-          <button type="button" class="all-[unset] box-border inline-flex items-center gap-2 px-6 py-3 bg-[#ee1c25] rounded-md">
-            <span class="[font-family:'Inter-Medium',Helvetica] font-medium text-white text-base tracking-[0] leading-6 whitespace-nowrap">DOWNLOAD</span>
-          </button>
-          <button type="button" class="all-[unset] box-border inline-flex items-center gap-2 px-6 py-3 bg-[rgba(255,255,255,0.15)] rounded-md border border-solid border-white">
-            <span class="[font-family:'Inter-Medium',Helvetica] font-medium text-white text-base tracking-[0] leading-6 whitespace-nowrap">VIEW TRACKLIST</span>
-          </button>
+        <div class="flex items-center gap-2 text-sm">
+          <span class="text-zinc-400">Sort by:</span>
+          <select class="bg-zinc-800 text-white text-sm px-3 py-2 rounded-md outline-none border-none">
+            <option>Newest First</option>
+            <option>Oldest First</option>
+            <option>Most Downloads</option>
+            <option>Most Views</option>
+          </select>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Albums Grid -->
-  <section class="flex flex-col items-center justify-center gap-5 px-80 py-9 relative self-stretch w-full flex-[0_0_auto] bg-[#111111]">
-    <div class="flex items-center justify-between px-5 py-0 relative self-stretch w-full flex-[0_0_auto]">
-      <div class="flex gap-2 items-center relative flex-[0_0_auto]">
-        <div class="relative w-7 h-7 aspect-[1]">
-          <img class="absolute w-[75.00%] h-[87.30%] top-[12.70%] left-[25.00%]" src="img/Musical.svg" alt="" />
+  <!-- FEATURED ALBUM -->
+  <section class="px-4 sm:px-6 lg:px-10 xl:px-20 py-14"
+    style="background:linear-gradient(0deg,rgba(0,0,0,0.4),rgba(0,0,0,0.4)),linear-gradient(0deg,rgba(231,71,59,1),rgba(231,71,59,1))">
+    <div class="max-w-screen-xl mx-auto flex flex-col lg:flex-row-reverse items-center gap-12">
+      <div class="flex-1 space-y-5 text-white">
+        <div>
+          <div class="flex items-center gap-2 mb-1">
+            <img src="img/Musical.svg" alt="" class="w-6 h-6" />
+            <span class="text-sm opacity-80">Featured Album</span>
+          </div>
+          <div class="flex items-start justify-between gap-4">
+            <h2 class="text-3xl sm:text-4xl font-normal">Drink More Water 5</h2>
+            <div class="text-right flex-shrink-0">
+              <img src="img/Up.svg" alt="" class="w-4 h-4 ml-auto" />
+              <p class="text-2xl font-bold">70%</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap items-center gap-2 mt-1 text-sm opacity-80">
+            <span>Isaiah Rashad</span><span>•</span>
+            <span>72 views</span><span>•</span>
+            <span>12 comments</span><span>•</span>
+            <span>40,073 downloads</span>
+          </div>
         </div>
-        <h2 class="relative w-fit mt-[-1.00px] [font-family:'Inter-Regular',Helvetica] font-normal text-white text-lg tracking-[-0.36px] leading-7">All Albums</h2>
+        <p class="text-sm sm:text-base leading-relaxed opacity-80">
+          Isaiah Rashad returns with the highly anticipated fifth installment of his Drink More Water series. Featuring soulful production and sharp lyricism, this project cements Rashad's reputation as one of hip-hop's most cerebral and consistent voices. Stream or download now exclusively on PlaneJane.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <button type="button" class="px-6 py-3 bg-primary hover:bg-red-700 text-white text-sm font-medium rounded-md transition-colors">DOWNLOAD</button>
+          <button type="button" class="px-6 py-3 bg-white/15 hover:bg-white/25 text-white text-sm font-medium rounded-md border border-white transition-colors">VIEW TRACKLIST</button>
+        </div>
       </div>
-      <div class="[font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">Showing 8 of 240 albums</div>
+      <div class="w-full lg:w-[360px] flex-shrink-0 flex items-center justify-center px-8 lg:px-12">
+        <img src="img/featured-album-bg.jpg" alt="Drink More Water 5 album cover"
+          class="w-full aspect-square object-cover shadow-2xl" />
+      </div>
     </div>
+  </section>
 
-    <div class="flex-wrap items-start justify-between gap-[32px_40px] flex px-5 py-0 relative self-stretch w-full flex-[0_0_auto]">
-
-      <article class="flex flex-col w-[280px] items-start gap-4 relative">
-        <div class="flex items-center gap-2.5 relative self-stretch w-full flex-[0_0_auto]">
-          <img class="relative w-[280px] h-[280px] aspect-[1] object-cover" src="img/album-1.jpg" alt="Another Night [New Mixtape] cover" />
+  <!-- ALBUMS GRID -->
+  <section class="bg-[#111111] px-4 sm:px-6 lg:px-10 xl:px-20 py-9">
+    <div class="max-w-screen-xl mx-auto space-y-6">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <img src="img/Musical.svg" alt="" class="w-6 h-6" />
+          <h2 class="text-lg font-normal">All Albums</h2>
         </div>
-        <div class="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
-          <h3 class="relative self-stretch mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-white text-lg tracking-[0] leading-7">Another Night [New Mixtape]</h3>
-          <div class="relative self-stretch [font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">Scru Face Jean</div>
-          <div class="flex items-center gap-3 relative self-stretch w-full flex-[0_0_auto]">
-            <span class="inline-flex items-center px-2 py-0.5 bg-[#333333] rounded text-[#999999] text-xs [font-family:'Inter-Regular',Helvetica]">Mixtape</span>
-            <div class="[font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">12,430 downloads</div>
+        <span class="text-zinc-400 text-sm">Showing 8 of 240 albums</span>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+
+        <article class="flex flex-col gap-3">
+          <div class="relative">
+            <img src="img/album-1.jpg" alt="Another Night [New Mixtape] cover" class="w-full aspect-square object-cover rounded" />
           </div>
-        </div>
-        <button type="button" class="all-[unset] box-border self-stretch flex items-center justify-center gap-2 px-4 py-2 bg-[#333333] rounded-md">
-          <span class="[font-family:'Inter-Medium',Helvetica] font-medium text-white text-sm tracking-[0] leading-5 whitespace-nowrap">DOWNLOAD</span>
-        </button>
-      </article>
-
-      <article class="flex flex-col w-[280px] items-start gap-4 relative">
-        <div class="flex items-center gap-2.5 relative self-stretch w-full flex-[0_0_auto]">
-          <img class="relative w-[280px] h-[280px] aspect-[1] object-cover" src="img/album-2.jpg" alt="I Am Mr. Mosley cover" />
-        </div>
-        <div class="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
-          <h3 class="relative self-stretch mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-white text-lg tracking-[0] leading-7">I Am Mr. Mosley</h3>
-          <div class="relative self-stretch [font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">Drakeo The Ruler</div>
-          <div class="flex items-center gap-3 relative self-stretch w-full flex-[0_0_auto]">
-            <span class="inline-flex items-center px-2 py-0.5 bg-[#333333] rounded text-[#999999] text-xs [font-family:'Inter-Regular',Helvetica]">LP</span>
-            <div class="[font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">8,210 downloads</div>
+          <div>
+            <h3 class="text-sm sm:text-base font-medium leading-snug">Another Night [New Mixtape]</h3>
+            <p class="text-zinc-400 text-xs sm:text-sm mt-1">Scru Face Jean</p>
+            <div class="flex items-center gap-2 mt-1">
+              <span class="text-xs bg-zinc-800 text-zinc-400 px-2 py-0.5 rounded">Mixtape</span>
+              <span class="text-xs text-zinc-500">12,430 downloads</span>
+            </div>
           </div>
-        </div>
-        <button type="button" class="all-[unset] box-border self-stretch flex items-center justify-center gap-2 px-4 py-2 bg-[#333333] rounded-md">
-          <span class="[font-family:'Inter-Medium',Helvetica] font-medium text-white text-sm tracking-[0] leading-5 whitespace-nowrap">DOWNLOAD</span>
-        </button>
-      </article>
+          <button type="button" class="w-full py-2 bg-zinc-800 hover:bg-zinc-700 text-white text-sm font-medium rounded-md transition-colors">DOWNLOAD</button>
+        </article>
 
-      <article class="flex flex-col w-[280px] items-start gap-4 relative">
-        <div class="flex items-center gap-2.5 relative self-stretch w-full flex-[0_0_auto]">
-          <img class="relative w-[280px] h-[280px] aspect-[1] object-cover" src="img/album-3.jpg" alt="It's Better This Way cover" />
-        </div>
-        <div class="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
-          <h3 class="relative self-stretch mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-white text-lg tracking-[0] leading-7">It's Better This Way</h3>
-          <div class="relative self-stretch [font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">Big K.R.I.T.</div>
-          <div class="flex items-center gap-3 relative self-stretch w-full flex-[0_0_auto]">
-            <span class="inline-flex items-center px-2 py-0.5 bg-[#333333] rounded text-[#999999] text-xs [font-family:'Inter-Regular',Helvetica]">Mixtape</span>
-            <div class="[font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">21,680 downloads</div>
+        <article class="flex flex-col gap-3">
+          <div class="relative">
+            <img src="img/album-2.jpg" alt="I Am Mr. Mosley cover" class="w-full aspect-square object-cover rounded" />
           </div>
-        </div>
-        <button type="button" class="all-[unset] box-border self-stretch flex items-center justify-center gap-2 px-4 py-2 bg-[#333333] rounded-md">
-          <span class="[font-family:'Inter-Medium',Helvetica] font-medium text-white text-sm tracking-[0] leading-5 whitespace-nowrap">DOWNLOAD</span>
-        </button>
-      </article>
-
-      <article class="flex flex-col w-[280px] items-start gap-4 relative">
-        <div class="flex items-center gap-2.5 relative self-stretch w-full flex-[0_0_auto]">
-          <img class="relative w-[280px] h-[280px] aspect-[1] object-cover" src="img/album-4.jpg" alt="The Cooligan: Death of My Teenage Mind, Part: II cover" />
-        </div>
-        <div class="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
-          <h3 class="relative self-stretch mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-white text-lg tracking-[0] leading-7">The Cooligan: Death of My Teenage Mind, Part: II</h3>
-          <p class="relative self-stretch [font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">Scotty ATL &amp; Honey Cocaine</p>
-          <div class="flex items-center gap-3 relative self-stretch w-full flex-[0_0_auto]">
-            <span class="inline-flex items-center px-2 py-0.5 bg-[#333333] rounded text-[#999999] text-xs [font-family:'Inter-Regular',Helvetica]">Mixtape</span>
-            <div class="[font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">5,320 downloads</div>
+          <div>
+            <h3 class="text-sm sm:text-base font-medium leading-snug">I Am Mr. Mosley</h3>
+            <p class="text-zinc-400 text-xs sm:text-sm mt-1">Drakeo The Ruler</p>
+            <div class="flex items-center gap-2 mt-1">
+              <span class="text-xs bg-zinc-800 text-zinc-400 px-2 py-0.5 rounded">LP</span>
+              <span class="text-xs text-zinc-500">8,210 downloads</span>
+            </div>
           </div>
-        </div>
-        <button type="button" class="all-[unset] box-border self-stretch flex items-center justify-center gap-2 px-4 py-2 bg-[#333333] rounded-md">
-          <span class="[font-family:'Inter-Medium',Helvetica] font-medium text-white text-sm tracking-[0] leading-5 whitespace-nowrap">DOWNLOAD</span>
-        </button>
-      </article>
+          <button type="button" class="w-full py-2 bg-zinc-800 hover:bg-zinc-700 text-white text-sm font-medium rounded-md transition-colors">DOWNLOAD</button>
+        </article>
 
-      <article class="flex flex-col w-[280px] items-start gap-4 relative">
-        <div class="flex items-center gap-2.5 relative self-stretch w-full flex-[0_0_auto]">
-          <img class="relative w-[280px] h-[280px] aspect-[1] object-cover" src="img/album-5.jpg" alt="These Things Really Do Happen When It's Dark Out cover" />
-        </div>
-        <div class="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
-          <h3 class="relative self-stretch mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-white text-lg tracking-[0] leading-7">These Things Really Do Happen When It's Dark Out</h3>
-          <div class="relative self-stretch [font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">G-Eazy</div>
-          <div class="flex items-center gap-3 relative self-stretch w-full flex-[0_0_auto]">
-            <span class="inline-flex items-center px-2 py-0.5 bg-[#333333] rounded text-[#999999] text-xs [font-family:'Inter-Regular',Helvetica]">Mixtape</span>
-            <div class="[font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">34,760 downloads</div>
+        <article class="flex flex-col gap-3">
+          <div class="relative">
+            <img src="img/album-3.jpg" alt="It's Better This Way cover" class="w-full aspect-square object-cover rounded" />
           </div>
-        </div>
-        <button type="button" class="all-[unset] box-border self-stretch flex items-center justify-center gap-2 px-4 py-2 bg-[#333333] rounded-md">
-          <span class="[font-family:'Inter-Medium',Helvetica] font-medium text-white text-sm tracking-[0] leading-5 whitespace-nowrap">DOWNLOAD</span>
-        </button>
-      </article>
-
-      <article class="flex flex-col w-[280px] items-start gap-4 relative">
-        <div class="flex items-center gap-2.5 relative self-stretch w-full flex-[0_0_auto]">
-          <img class="relative w-[280px] h-[280px] aspect-[1] object-cover" src="img/album-6.jpg" alt="Jeezy - Politically Correct EP cover" />
-        </div>
-        <div class="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
-          <h3 class="relative self-stretch mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-white text-lg tracking-[0] leading-7">Jeezy - Politically Correct EP</h3>
-          <div class="relative self-stretch [font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">Jeezy tha Snowman</div>
-          <div class="flex items-center gap-3 relative self-stretch w-full flex-[0_0_auto]">
-            <span class="inline-flex items-center px-2 py-0.5 bg-[#333333] rounded text-[#999999] text-xs [font-family:'Inter-Regular',Helvetica]">EP</span>
-            <div class="[font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">16,940 downloads</div>
+          <div>
+            <h3 class="text-sm sm:text-base font-medium leading-snug">It's Better This Way</h3>
+            <p class="text-zinc-400 text-xs sm:text-sm mt-1">Big K.R.I.T.</p>
+            <div class="flex items-center gap-2 mt-1">
+              <span class="text-xs bg-zinc-800 text-zinc-400 px-2 py-0.5 rounded">Mixtape</span>
+              <span class="text-xs text-zinc-500">21,680 downloads</span>
+            </div>
           </div>
-        </div>
-        <button type="button" class="all-[unset] box-border self-stretch flex items-center justify-center gap-2 px-4 py-2 bg-[#333333] rounded-md">
-          <span class="[font-family:'Inter-Medium',Helvetica] font-medium text-white text-sm tracking-[0] leading-5 whitespace-nowrap">DOWNLOAD</span>
-        </button>
-      </article>
+          <button type="button" class="w-full py-2 bg-zinc-800 hover:bg-zinc-700 text-white text-sm font-medium rounded-md transition-colors">DOWNLOAD</button>
+        </article>
 
-      <article class="flex flex-col w-[280px] items-start gap-4 relative">
-        <div class="flex items-center gap-2.5 relative self-stretch w-full flex-[0_0_auto]">
-          <img class="relative w-[280px] h-[280px] aspect-[1] object-cover" src="img/album-7.jpg" alt="Rich The Kid &amp; iLoveMakonnen - Whip It cover" />
-        </div>
-        <div class="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
-          <h3 class="relative self-stretch mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-white text-lg tracking-[0] leading-7">Rich The Kid &amp; iLoveMakonnen - Whip It</h3>
-          <p class="relative self-stretch [font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">Rich The Kid &amp; iLoveMakonnen</p>
-          <div class="flex items-center gap-3 relative self-stretch w-full flex-[0_0_auto]">
-            <span class="inline-flex items-center px-2 py-0.5 bg-[#ee1c25] rounded text-white text-xs [font-family:'Inter-Regular',Helvetica]">Upcoming</span>
-            <div class="[font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">Pre-save available</div>
+        <article class="flex flex-col gap-3">
+          <div class="relative">
+            <img src="img/album-4.jpg" alt="The Cooligan cover" class="w-full aspect-square object-cover rounded" />
           </div>
-        </div>
-        <button type="button" class="all-[unset] box-border self-stretch flex items-center justify-center gap-2 px-4 py-2 bg-[#ee1c25] rounded-md">
-          <span class="[font-family:'Inter-Medium',Helvetica] font-medium text-white text-sm tracking-[0] leading-5 whitespace-nowrap">PRE-SAVE</span>
-        </button>
-      </article>
-
-      <article class="flex flex-col w-[280px] items-start gap-4 relative">
-        <div class="flex items-center gap-2.5 relative self-stretch w-full flex-[0_0_auto]">
-          <img class="relative w-[280px] h-[280px] aspect-[1] object-cover" src="img/album-8.jpg" alt="Alliance &amp; Loyalty cover" />
-        </div>
-        <div class="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
-          <h3 class="relative self-stretch mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-white text-lg tracking-[0] leading-7">Alliance &amp; Loyalty</h3>
-          <div class="relative self-stretch [font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">Cool and the Gang</div>
-          <div class="flex items-center gap-3 relative self-stretch w-full flex-[0_0_auto]">
-            <span class="inline-flex items-center px-2 py-0.5 bg-[#333333] rounded text-[#999999] text-xs [font-family:'Inter-Regular',Helvetica]">LP</span>
-            <div class="[font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">9,870 downloads</div>
+          <div>
+            <h3 class="text-sm sm:text-base font-medium leading-snug">The Cooligan: Death of My Teenage Mind, Part: II</h3>
+            <p class="text-zinc-400 text-xs sm:text-sm mt-1">Scotty ATL &amp; Honey Cocaine</p>
+            <div class="flex items-center gap-2 mt-1">
+              <span class="text-xs bg-zinc-800 text-zinc-400 px-2 py-0.5 rounded">Mixtape</span>
+              <span class="text-xs text-zinc-500">5,320 downloads</span>
+            </div>
           </div>
-        </div>
-        <button type="button" class="all-[unset] box-border self-stretch flex items-center justify-center gap-2 px-4 py-2 bg-[#333333] rounded-md">
-          <span class="[font-family:'Inter-Medium',Helvetica] font-medium text-white text-sm tracking-[0] leading-5 whitespace-nowrap">DOWNLOAD</span>
-        </button>
-      </article>
+          <button type="button" class="w-full py-2 bg-zinc-800 hover:bg-zinc-700 text-white text-sm font-medium rounded-md transition-colors">DOWNLOAD</button>
+        </article>
 
-      <button class="all-[unset] box-border w-full flex items-center justify-center gap-2 px-6 py-3 relative bg-[#333333] rounded-md" type="button">
-        <div class="relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-white text-base tracking-[0] leading-6 whitespace-nowrap">LOAD MORE ALBUMS</div>
+        <article class="flex flex-col gap-3">
+          <div class="relative">
+            <img src="img/album-5.jpg" alt="These Things Really Do Happen cover" class="w-full aspect-square object-cover rounded" />
+          </div>
+          <div>
+            <h3 class="text-sm sm:text-base font-medium leading-snug">These Things Really Do Happen When It's Dark Out</h3>
+            <p class="text-zinc-400 text-xs sm:text-sm mt-1">G-Eazy</p>
+            <div class="flex items-center gap-2 mt-1">
+              <span class="text-xs bg-zinc-800 text-zinc-400 px-2 py-0.5 rounded">Mixtape</span>
+              <span class="text-xs text-zinc-500">34,760 downloads</span>
+            </div>
+          </div>
+          <button type="button" class="w-full py-2 bg-zinc-800 hover:bg-zinc-700 text-white text-sm font-medium rounded-md transition-colors">DOWNLOAD</button>
+        </article>
+
+        <article class="flex flex-col gap-3">
+          <div class="relative">
+            <img src="img/album-6.jpg" alt="Politically Correct EP cover" class="w-full aspect-square object-cover rounded" />
+          </div>
+          <div>
+            <h3 class="text-sm sm:text-base font-medium leading-snug">Jeezy - Politically Correct EP</h3>
+            <p class="text-zinc-400 text-xs sm:text-sm mt-1">Jeezy tha Snowman</p>
+            <div class="flex items-center gap-2 mt-1">
+              <span class="text-xs bg-zinc-800 text-zinc-400 px-2 py-0.5 rounded">EP</span>
+              <span class="text-xs text-zinc-500">16,940 downloads</span>
+            </div>
+          </div>
+          <button type="button" class="w-full py-2 bg-zinc-800 hover:bg-zinc-700 text-white text-sm font-medium rounded-md transition-colors">DOWNLOAD</button>
+        </article>
+
+        <article class="flex flex-col gap-3">
+          <div class="relative">
+            <img src="img/album-7.jpg" alt="Whip It cover" class="w-full aspect-square object-cover rounded" />
+            <span class="absolute top-2 left-2 bg-primary text-white text-xs font-medium px-2 py-0.5 rounded">Upcoming</span>
+          </div>
+          <div>
+            <h3 class="text-sm sm:text-base font-medium leading-snug">Rich The Kid &amp; iLoveMakonnen - Whip It</h3>
+            <p class="text-zinc-400 text-xs sm:text-sm mt-1">Rich The Kid &amp; iLoveMakonnen</p>
+            <div class="flex items-center gap-2 mt-1">
+              <span class="text-xs bg-zinc-800 text-zinc-400 px-2 py-0.5 rounded">Upcoming</span>
+              <span class="text-xs text-zinc-500">Pre-save available</span>
+            </div>
+          </div>
+          <button type="button" class="w-full py-2 bg-primary hover:bg-red-700 text-white text-sm font-medium rounded-md transition-colors">PRE-SAVE</button>
+        </article>
+
+        <article class="flex flex-col gap-3">
+          <div class="relative">
+            <img src="img/album-8.jpg" alt="Alliance &amp; Loyalty cover" class="w-full aspect-square object-cover rounded" />
+          </div>
+          <div>
+            <h3 class="text-sm sm:text-base font-medium leading-snug">Alliance &amp; Loyalty</h3>
+            <p class="text-zinc-400 text-xs sm:text-sm mt-1">Cool and the Gang</p>
+            <div class="flex items-center gap-2 mt-1">
+              <span class="text-xs bg-zinc-800 text-zinc-400 px-2 py-0.5 rounded">LP</span>
+              <span class="text-xs text-zinc-500">9,870 downloads</span>
+            </div>
+          </div>
+          <button type="button" class="w-full py-2 bg-zinc-800 hover:bg-zinc-700 text-white text-sm font-medium rounded-md transition-colors">DOWNLOAD</button>
+        </article>
+
+      </div>
+
+      <button type="button"
+        class="w-full py-3 bg-zinc-800 hover:bg-zinc-700 text-white text-sm font-medium rounded-md transition-colors">
+        LOAD MORE ALBUMS
       </button>
     </div>
   </section>
 
 </main>
 
-<!-- Footer -->
-<footer class="px-80 py-6 bg-white flex flex-col items-center justify-center gap-5 relative self-stretch w-full flex-[0_0_auto]">
-  <div class="items-center justify-between flex px-5 py-0 relative self-stretch w-full flex-[0_0_auto]">
-    <div class="inline-flex items-center gap-2 relative flex-[0_0_auto]">
-      <p class="relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-[#ee1c25] text-sm tracking-[0] leading-5 whitespace-nowrap">Copyright &copy; 2026 PlaneJane - ilovethehype | mymusic2loud | alwaysonfire LLC</p>
-    </div>
-    <nav aria-label="Footer" class="inline-flex items-center gap-6 relative flex-[0_0_auto]">
-      <a href="index.html#new-releases" class="inline-flex items-center gap-2 relative flex-[0_0_auto]">
-        <span class="relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-[#1d1d1f] text-sm tracking-[0] leading-5 whitespace-nowrap">New Releases</span>
-      </a>
-      <a href="#" class="inline-flex items-center gap-2 relative flex-[0_0_auto]">
-        <span class="text-[#1d1d1f] text-sm leading-5 relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium tracking-[0] whitespace-nowrap">Songs</span>
-      </a>
-      <a href="artists.html" class="inline-flex items-center gap-2 relative flex-[0_0_auto]">
-        <span class="text-[#1d1d1f] text-sm leading-5 relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium tracking-[0] whitespace-nowrap">Artists</span>
-      </a>
-      <a href="albums.html" class="inline-flex items-center gap-2 relative flex-[0_0_auto]">
-        <span class="relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-[#1d1d1f] text-sm tracking-[0] leading-5 whitespace-nowrap">Albums</span>
-      </a>
-      <a href="#" class="inline-flex items-center gap-2 relative flex-[0_0_auto]">
-        <span class="text-[#1d1d1f] text-sm leading-5 relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium tracking-[0] whitespace-nowrap">Videos</span>
-      </a>
-      <a href="#" class="inline-flex items-center gap-2 relative flex-[0_0_auto]">
-        <span class="text-[#1d1d1f] text-sm leading-5 relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium tracking-[0] whitespace-nowrap">Shop</span>
-      </a>
-      <a href="contact.html" class="inline-flex items-center gap-2 relative flex-[0_0_auto]">
-        <span class="text-[#1d1d1f] text-sm leading-5 relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium tracking-[0] whitespace-nowrap">Contact</span>
-      </a>
+<!-- FOOTER -->
+<footer class="bg-white px-4 sm:px-6 lg:px-10 xl:px-20 py-6">
+  <div class="max-w-screen-xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+    <p class="text-primary text-sm font-medium text-center sm:text-left">
+      Copyright &copy; 2026 PlaneJane - ilovethehype | mymusic2loud | alwaysonfire LLC
+    </p>
+    <nav aria-label="Footer" class="flex flex-wrap justify-center gap-4 text-sm font-medium text-[#1d1d1f]">
+      <a href="#" class="hover:text-primary transition-colors">New Releases</a>
+      <a href="#" class="hover:text-primary transition-colors">Songs</a>
+      <a href="artists.html" class="hover:text-primary transition-colors">Artists</a>
+      <a href="albums.html" class="hover:text-primary transition-colors">Albums</a>
+      <a href="#" class="hover:text-primary transition-colors">Videos</a>
+      <a href="#" class="hover:text-primary transition-colors">Shop</a>
+      <a href="contact.html" class="hover:text-primary transition-colors">Contact</a>
     </nav>
   </div>
 </footer>
 
-</div>
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileNav = document.getElementById('mobileNav');
+  menuBtn.addEventListener('click', () => {
+    const isOpen = !mobileNav.classList.contains('hidden');
+    mobileNav.classList.toggle('hidden', isOpen);
+    menuBtn.setAttribute('aria-expanded', String(!isOpen));
+    menuBtn.textContent = isOpen ? '☰' : '✕';
+  });
+</script>
+
 </body>
 </html>
