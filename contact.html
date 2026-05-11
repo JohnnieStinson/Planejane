@@ -1,127 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta charset="utf-8" />
-<title>Contact - PlaneJane</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Condensed:ital,wght@1,800&display=swap">
-<link rel="stylesheet" href="globals.css">
-<link rel="stylesheet" href="styleguide.css">
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-tailwind.config = {
-  theme: {
-    extend: {
-      colors: {
-        "gc-moon-yellow": "var(--gc-moon-yellow)",
-        "gc-night-rider": "var(--gc-night-rider)",
-        "gc-noble": "var(--gc-noble)",
-        "gcs-cobalt": "var(--gcs-cobalt)",
-        "gcs-midnight": "var(--gcs-midnight)",
-        "gcs-sea-foam": "var(--gcs-sea-foam)"
-      },
-      fontFamily: {
-        "h1-48px": "var(--h1-48px-font-family)",
-        "h2-24px": "var(--h2-24px-font-family)",
-        "h3-18px": "var(--h3-18px-font-family)",
-        "h4-16px": "var(--h4-16px-font-family)",
-        "h5-14px": "var(--h5-14px-font-family)",
-        "h6-13px": "var(--h6-13px-font-family)",
-        "pull-quote": "var(--pull-quote-font-family)"
-      },
-      boxShadow: {
-        "shadow": "var(--shadow)"
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - PlaneJane</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Condensed:ital,wght@1,800&display=swap">
+  <link rel="stylesheet" href="globals.css">
+  <link rel="stylesheet" href="styleguide.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { primary: '#ee1c25' },
+          fontFamily: { condensed: ["'Roboto Condensed'", 'Helvetica', 'sans-serif'] }
+        }
       }
     }
-  },
-  plugins: []
-}
-</script>
+  </script>
 </head>
-<body class="m-0 min-h-full bg-white">
-<div class="flex flex-col items-start relative">
 
-<!-- Header -->
-<header class="px-80 py-5 bg-[#111111] border-b [border-bottom-style:solid] border-[#1d1d1f] flex flex-col items-center justify-center gap-5 relative self-stretch w-full flex-[0_0_auto]">
-  <div class="items-center justify-between flex px-5 py-0 relative self-stretch w-full flex-[0_0_auto] gap-6">
-    <a href="index.html" aria-label="PlaneJane home" class="inline-flex items-center justify-center gap-2.5 px-2.5 py-1 relative flex-[0_0_auto] [background:linear-gradient(0deg,rgba(238,28,37,1)_0%,rgba(238,28,37,1)_100%)]">
-      <span class="relative w-fit mt-[-1.00px] [text-shadow:0px_0px_40px_#000000cc] [font-family:'Roboto_Condensed-ExtraBoldItalic',Helvetica] font-extrabold italic text-white text-[28px] tracking-[-0.56px] leading-8 whitespace-nowrap shadow-shadow">PLANEJANE</span>
+<body class="bg-black text-white m-0 min-h-full">
+
+<!-- HEADER -->
+<header class="sticky top-0 z-50 bg-[#111111] border-b border-[#1d1d1f]">
+  <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-10 py-4 flex items-center justify-between gap-4">
+    <a href="index.html" aria-label="PlaneJane home" class="flex-shrink-0 inline-flex items-center bg-primary px-2.5 py-1">
+      <span class="font-extrabold italic text-white text-[28px] tracking-[-0.56px] leading-8 whitespace-nowrap font-condensed" style="text-shadow:0px 0px 40px #000000cc">PLANEJANE</span>
     </a>
-    <nav aria-label="Primary" class="inline-flex items-center gap-6 relative flex-[0_0_auto]">
-      <a href="index.html#new-releases" class="inline-flex items-center gap-2 relative flex-[0_0_auto]">
-        <span class="relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-white text-base tracking-[0] leading-6 whitespace-nowrap">New Releases</span>
-      </a>
-      <a href="#" class="inline-flex items-center gap-2 relative flex-[0_0_auto]">
-        <span class="text-white text-base leading-6 relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium tracking-[0] whitespace-nowrap">Songs</span>
-      </a>
-      <a href="artists.html" class="inline-flex items-center gap-2 relative flex-[0_0_auto]">
-        <span class="text-white text-base leading-6 relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium tracking-[0] whitespace-nowrap">Artists</span>
-      </a>
-      <a href="albums.html" class="inline-flex items-center gap-2 relative flex-[0_0_auto]">
-        <span class="text-white text-base leading-6 relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium tracking-[0] whitespace-nowrap">Albums</span>
-      </a>
-      <a href="#" class="inline-flex items-center gap-2 relative flex-[0_0_auto]">
-        <span class="text-white text-base leading-6 relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium tracking-[0] whitespace-nowrap">Videos</span>
-      </a>
-      <a href="#" class="inline-flex items-center gap-2 relative flex-[0_0_auto]">
-        <span class="text-white text-base leading-6 relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium tracking-[0] whitespace-nowrap">Shop</span>
-      </a>
-      <a href="contact.html" class="inline-flex items-center gap-2 relative flex-[0_0_auto]">
-        <span class="text-[#ee1c25] text-base leading-6 relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium tracking-[0] whitespace-nowrap">Contact</span>
-      </a>
+    <nav aria-label="Primary" class="hidden md:flex items-center gap-6 text-sm text-white/80">
+      <a href="#" class="hover:text-white transition-colors whitespace-nowrap">New Releases</a>
+      <a href="#" class="hover:text-white transition-colors">Songs</a>
+      <a href="artists.html" class="hover:text-white transition-colors">Artists</a>
+      <a href="albums.html" class="hover:text-white transition-colors">Albums</a>
+      <a href="#" class="hover:text-white transition-colors">Videos</a>
+      <a href="#" class="hover:text-white transition-colors">Shop</a>
+      <a href="contact.html" class="text-primary font-medium">Contact</a>
     </nav>
-    <div class="inline-flex items-center gap-4 relative flex-[0_0_auto]">
-      <img class="w-6 h-6" src="img/account.svg" alt="Account" />
-      <img class="w-6 h-6" src="img/cart.svg" alt="Cart" />
+    <div class="flex items-center gap-3 flex-shrink-0">
+      <img class="w-6 h-6 hidden sm:block" src="img/account.svg" alt="Account" />
+      <img class="w-6 h-6 hidden sm:block" src="img/cart.svg" alt="Cart" />
+      <form class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded border border-zinc-600" role="search" action="#">
+        <label for="site-search" class="sr-only">Search</label>
+        <input id="site-search" name="search" type="search" placeholder="Search"
+          class="bg-transparent text-sm text-white outline-none placeholder:text-white/60 w-32" />
+        <button type="submit" aria-label="Submit search">
+          <img src="img/search.svg" alt="" class="w-4 h-4" />
+        </button>
+      </form>
+      <button id="menuBtn" aria-label="Open menu" aria-expanded="false"
+        class="md:hidden text-white text-2xl leading-none focus:outline-none">☰</button>
     </div>
-    <form class="flex w-[246px] items-center justify-between px-4 py-3 relative rounded-md border border-solid border-[#666666]" role="search" action="#">
-      <label for="site-search" class="sr-only">Search</label>
-      <input id="site-search" name="search" aria-label="Search" class="relative flex-1 min-w-0 mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-white text-base tracking-[0] leading-6 [background:transparent] border-[none] p-0 outline-none placeholder:text-white" placeholder="Search" type="search" />
-      <button type="submit" aria-label="Submit search" class="relative w-6 h-6 aspect-[1] flex items-center justify-center">
-        <span class="w-6 h-6 flex aspect-[1]">
-          <img class="flex-1 w-[19.29px]" src="img/search.svg" alt="" />
-        </span>
+  </div>
+  <div id="mobileNav" class="hidden md:hidden bg-[#111111] border-t border-zinc-800 px-4 pb-4 pt-3 flex flex-col gap-3 text-sm">
+    <a href="#" class="hover:text-primary transition-colors">New Releases</a>
+    <a href="#" class="hover:text-primary transition-colors">Songs</a>
+    <a href="artists.html" class="hover:text-primary transition-colors">Artists</a>
+    <a href="albums.html" class="hover:text-primary transition-colors">Albums</a>
+    <a href="#" class="hover:text-primary transition-colors">Videos</a>
+    <a href="#" class="hover:text-primary transition-colors">Shop</a>
+    <a href="contact.html" class="text-primary font-medium">Contact</a>
+    <form class="flex items-center gap-2 px-3 py-1.5 rounded border border-zinc-600 mt-1" role="search" action="#">
+      <input type="search" placeholder="Search"
+        class="bg-transparent text-sm text-white outline-none placeholder:text-white/60 flex-1" />
+      <button type="submit" aria-label="Submit search">
+        <img src="img/search.svg" alt="" class="w-4 h-4" />
       </button>
     </form>
   </div>
 </header>
 
-<main class="flex flex-col items-start relative self-stretch w-full">
+<main>
 
-  <!-- Page Header -->
-  <section class="px-80 py-9 bg-[#111111] flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
-    <div class="flex items-center gap-2 px-5 py-0 relative self-stretch w-full flex-[0_0_auto]">
-      <div class="relative w-7 h-7 aspect-[1]">
-        <img class="absolute w-[75.00%] h-[87.30%] top-[12.70%] left-[25.00%]" src="img/Music Folder.svg" alt="" />
+  <!-- PAGE HEADER -->
+  <section class="bg-[#111111] px-4 sm:px-6 lg:px-10 xl:px-20 py-9">
+    <div class="max-w-screen-xl mx-auto space-y-2">
+      <div class="flex items-center gap-2">
+        <img src="img/Music Folder.svg" alt="" class="w-7 h-7" />
+        <h1 class="text-4xl font-normal tracking-tight">Contact</h1>
       </div>
-      <h1 class="relative flex-1 mt-[-1.00px] [font-family:'Inter-Regular',Helvetica] font-normal text-white text-4xl tracking-[-0.72px] leading-10">Contact</h1>
+      <p class="text-zinc-400 text-base">Get in touch with the PlaneJane team — submit music, report issues, or just say hello.</p>
     </div>
-    <p class="relative px-5 [font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-base tracking-[0] leading-6">Get in touch with the PlaneJane team — submit music, report issues, or just say hello.</p>
   </section>
 
-  <!-- Contact Form + Info -->
-  <section class="px-80 py-14 [background:linear-gradient(0deg,rgba(234,235,240,1)_0%,rgba(234,235,240,1)_100%)] flex flex-col items-start gap-2.5 relative self-stretch w-full flex-[0_0_auto]">
-    <div class="items-start gap-20 flex px-5 py-0 relative self-stretch w-full flex-[0_0_auto]">
+  <!-- CONTACT FORM + INFO -->
+  <section class="bg-[#eaebf0] px-4 sm:px-6 lg:px-10 xl:px-20 py-14">
+    <div class="max-w-screen-xl mx-auto flex flex-col lg:flex-row items-start gap-12">
 
       <!-- Form -->
-      <div class="flex flex-col flex-1 items-start gap-6 relative">
-        <h2 class="relative self-stretch mt-[-1.00px] [font-family:'Inter-Regular',Helvetica] font-normal text-[#1d1d1f] text-2xl tracking-[-0.48px] leading-8">Send Us a Message</h2>
-        <form class="flex flex-col items-start gap-5 relative self-stretch w-full" action="#" method="post">
-          <div class="flex items-start gap-5 relative self-stretch w-full flex-[0_0_auto]">
-            <div class="flex flex-col items-start gap-2 relative flex-1 grow">
-              <label for="contact-name" class="relative [font-family:'Inter-Medium',Helvetica] font-medium text-[#1d1d1f] text-sm tracking-[0] leading-5">Full Name</label>
-              <input id="contact-name" name="name" type="text" required placeholder="Your full name" class="relative self-stretch w-full px-4 py-3 bg-white border border-solid border-[#cccccc] rounded-md [font-family:'Inter-Regular',Helvetica] font-normal text-[#1d1d1f] text-base tracking-[0] leading-6 outline-none focus:border-[#ee1c25] placeholder:text-[#999999]" />
+      <div class="flex-1 space-y-6">
+        <h2 class="text-2xl font-normal text-[#1d1d1f]">Send Us a Message</h2>
+        <form class="space-y-5" action="#" method="post">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div class="flex flex-col gap-2">
+              <label for="contact-name" class="text-sm font-medium text-[#1d1d1f]">Full Name</label>
+              <input id="contact-name" name="name" type="text" required placeholder="Your full name"
+                class="w-full px-4 py-3 bg-white border border-[#cccccc] rounded-md text-[#1d1d1f] text-base outline-none focus:border-primary placeholder:text-[#999999]" />
             </div>
-            <div class="flex flex-col items-start gap-2 relative flex-1 grow">
-              <label for="contact-email" class="relative [font-family:'Inter-Medium',Helvetica] font-medium text-[#1d1d1f] text-sm tracking-[0] leading-5">Email Address</label>
-              <input id="contact-email" name="email" type="email" required placeholder="your@email.com" class="relative self-stretch w-full px-4 py-3 bg-white border border-solid border-[#cccccc] rounded-md [font-family:'Inter-Regular',Helvetica] font-normal text-[#1d1d1f] text-base tracking-[0] leading-6 outline-none focus:border-[#ee1c25] placeholder:text-[#999999]" />
+            <div class="flex flex-col gap-2">
+              <label for="contact-email" class="text-sm font-medium text-[#1d1d1f]">Email Address</label>
+              <input id="contact-email" name="email" type="email" required placeholder="your@email.com"
+                class="w-full px-4 py-3 bg-white border border-[#cccccc] rounded-md text-[#1d1d1f] text-base outline-none focus:border-primary placeholder:text-[#999999]" />
             </div>
           </div>
-          <div class="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
-            <label for="contact-subject" class="relative [font-family:'Inter-Medium',Helvetica] font-medium text-[#1d1d1f] text-sm tracking-[0] leading-5">Subject</label>
-            <select id="contact-subject" name="subject" class="relative self-stretch w-full px-4 py-3 bg-white border border-solid border-[#cccccc] rounded-md [font-family:'Inter-Regular',Helvetica] font-normal text-[#1d1d1f] text-base tracking-[0] leading-6 outline-none focus:border-[#ee1c25]">
+          <div class="flex flex-col gap-2">
+            <label for="contact-subject" class="text-sm font-medium text-[#1d1d1f]">Subject</label>
+            <select id="contact-subject" name="subject"
+              class="w-full px-4 py-3 bg-white border border-[#cccccc] rounded-md text-[#1d1d1f] text-base outline-none focus:border-primary">
               <option value="">Select a subject</option>
               <option value="submit-music">Submit Music</option>
               <option value="artist-feature">Artist Feature Request</option>
@@ -131,75 +118,61 @@ tailwind.config = {
               <option value="other">Other</option>
             </select>
           </div>
-          <div class="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto]">
-            <label for="contact-message" class="relative [font-family:'Inter-Medium',Helvetica] font-medium text-[#1d1d1f] text-sm tracking-[0] leading-5">Message</label>
-            <textarea id="contact-message" name="message" rows="6" required placeholder="Write your message here..." class="relative self-stretch w-full px-4 py-3 bg-white border border-solid border-[#cccccc] rounded-md [font-family:'Inter-Regular',Helvetica] font-normal text-[#1d1d1f] text-base tracking-[0] leading-6 outline-none focus:border-[#ee1c25] placeholder:text-[#999999] resize-y"></textarea>
+          <div class="flex flex-col gap-2">
+            <label for="contact-message" class="text-sm font-medium text-[#1d1d1f]">Message</label>
+            <textarea id="contact-message" name="message" rows="6" required placeholder="Write your message here..."
+              class="w-full px-4 py-3 bg-white border border-[#cccccc] rounded-md text-[#1d1d1f] text-base outline-none focus:border-primary placeholder:text-[#999999] resize-y"></textarea>
           </div>
-          <button type="submit" class="all-[unset] box-border self-stretch flex items-center justify-center gap-2 px-6 py-3 bg-[#ee1c25] rounded-md">
-            <span class="[font-family:'Inter-Medium',Helvetica] font-medium text-white text-base tracking-[0] leading-6 whitespace-nowrap">SEND MESSAGE</span>
+          <button type="submit"
+            class="w-full sm:w-auto px-6 py-3 bg-primary hover:bg-red-700 text-white text-sm font-medium rounded-md transition-colors">
+            SEND MESSAGE
           </button>
         </form>
       </div>
 
       <!-- Info Panel -->
-      <aside class="flex flex-col w-[360px] items-start gap-8 relative flex-[0_0_auto]">
-        <div class="flex flex-col items-start gap-4 relative self-stretch w-full flex-[0_0_auto]">
-          <h2 class="relative self-stretch mt-[-1.00px] [font-family:'Inter-Regular',Helvetica] font-normal text-[#1d1d1f] text-2xl tracking-[-0.48px] leading-8">Get In Touch</h2>
-          <p class="relative self-stretch [font-family:'Inter-Regular',Helvetica] font-normal text-[#555555] text-base tracking-[0] leading-6">Whether you're an artist looking to get featured, a fan with a question, or a brand interested in advertising, we want to hear from you.</p>
+      <aside class="w-full lg:w-[360px] flex-shrink-0 space-y-8">
+        <div class="space-y-2">
+          <h2 class="text-2xl font-normal text-[#1d1d1f]">Get In Touch</h2>
+          <p class="text-[#555555] text-base leading-relaxed">Whether you're an artist looking to get featured, a fan with a question, or a brand interested in advertising, we want to hear from you.</p>
         </div>
 
-        <div class="flex flex-col items-start gap-5 relative self-stretch w-full flex-[0_0_auto]">
-          <!-- Submit Music -->
-          <div class="flex items-start gap-4 relative self-stretch w-full flex-[0_0_auto]">
-            <div class="flex items-center justify-center w-10 h-10 bg-[#ee1c25] rounded-md flex-[0_0_auto]">
+        <div class="divide-y divide-[#cccccc]">
+          <div class="flex items-start gap-4 py-5 first:pt-0">
+            <div class="flex items-center justify-center w-10 h-10 bg-primary rounded-md flex-shrink-0">
               <img class="w-5 h-5" src="img/Musical-black.svg" alt="" />
             </div>
-            <div class="flex flex-col items-start gap-1 relative flex-1 grow">
-              <div class="relative [font-family:'Inter-Medium',Helvetica] font-medium text-[#1d1d1f] text-base tracking-[0] leading-6">Submit Your Music</div>
-              <p class="relative [font-family:'Inter-Regular',Helvetica] font-normal text-[#555555] text-sm tracking-[0] leading-5">Artists can submit mixtapes, EPs, and albums for review and potential featuring on the site.</p>
+            <div>
+              <p class="font-medium text-[#1d1d1f] text-base">Submit Your Music</p>
+              <p class="text-[#555555] text-sm mt-1 leading-relaxed">Artists can submit mixtapes, EPs, and albums for review and potential featuring on the site.</p>
             </div>
           </div>
-
-          <div class="relative self-stretch w-full h-px bg-[#cccccc]"></div>
-
-          <!-- Advertising -->
-          <div class="flex items-start gap-4 relative self-stretch w-full flex-[0_0_auto]">
-            <div class="flex items-center justify-center w-10 h-10 bg-[#333333] rounded-md flex-[0_0_auto]">
+          <div class="flex items-start gap-4 py-5">
+            <div class="flex items-center justify-center w-10 h-10 bg-zinc-800 rounded-md flex-shrink-0">
               <img class="w-5 h-5" src="img/DJ.svg" alt="" />
             </div>
-            <div class="flex flex-col items-start gap-1 relative flex-1 grow">
-              <div class="relative [font-family:'Inter-Medium',Helvetica] font-medium text-[#1d1d1f] text-base tracking-[0] leading-6">Advertising &amp; Partnerships</div>
-              <p class="relative [font-family:'Inter-Regular',Helvetica] font-normal text-[#555555] text-sm tracking-[0] leading-5">Reach millions of hip-hop fans. Contact us for banner ads, sponsored posts, and brand deals.</p>
+            <div>
+              <p class="font-medium text-[#1d1d1f] text-base">Advertising &amp; Partnerships</p>
+              <p class="text-[#555555] text-sm mt-1 leading-relaxed">Reach millions of hip-hop fans. Contact us for banner ads, sponsored posts, and brand deals.</p>
             </div>
           </div>
-
-          <div class="relative self-stretch w-full h-px bg-[#cccccc]"></div>
-
-          <!-- General -->
-          <div class="flex items-start gap-4 relative self-stretch w-full flex-[0_0_auto]">
-            <div class="flex items-center justify-center w-10 h-10 bg-[#333333] rounded-md flex-[0_0_auto]">
+          <div class="flex items-start gap-4 py-5">
+            <div class="flex items-center justify-center w-10 h-10 bg-zinc-800 rounded-md flex-shrink-0">
               <img class="w-5 h-5" src="img/Music Folder.svg" alt="" />
             </div>
-            <div class="flex flex-col items-start gap-1 relative flex-1 grow">
-              <div class="relative [font-family:'Inter-Medium',Helvetica] font-medium text-[#1d1d1f] text-base tracking-[0] leading-6">General Inquiries</div>
-              <p class="relative [font-family:'Inter-Regular',Helvetica] font-normal text-[#555555] text-sm tracking-[0] leading-5">Questions, feedback, or anything else? We typically respond within 1–2 business days.</p>
+            <div>
+              <p class="font-medium text-[#1d1d1f] text-base">General Inquiries</p>
+              <p class="text-[#555555] text-sm mt-1 leading-relaxed">Questions, feedback, or anything else? We typically respond within 1–2 business days.</p>
             </div>
           </div>
         </div>
 
-        <!-- Social Links -->
-        <div class="flex flex-col items-start gap-3 relative self-stretch w-full flex-[0_0_auto]">
-          <div class="relative [font-family:'Inter-Medium',Helvetica] font-medium text-[#1d1d1f] text-base tracking-[0] leading-6">Follow PlaneJane</div>
-          <div class="flex items-center gap-3 relative self-stretch w-full flex-[0_0_auto]">
-            <a href="#" class="all-[unset] box-border inline-flex items-center gap-2 px-4 py-2 bg-[#111111] rounded-md">
-              <span class="[font-family:'Inter-Medium',Helvetica] font-medium text-white text-sm tracking-[0] leading-5 whitespace-nowrap">Twitter</span>
-            </a>
-            <a href="#" class="all-[unset] box-border inline-flex items-center gap-2 px-4 py-2 bg-[#111111] rounded-md">
-              <span class="[font-family:'Inter-Medium',Helvetica] font-medium text-white text-sm tracking-[0] leading-5 whitespace-nowrap">Instagram</span>
-            </a>
-            <a href="#" class="all-[unset] box-border inline-flex items-center gap-2 px-4 py-2 bg-[#111111] rounded-md">
-              <span class="[font-family:'Inter-Medium',Helvetica] font-medium text-white text-sm tracking-[0] leading-5 whitespace-nowrap">YouTube</span>
-            </a>
+        <div class="space-y-3">
+          <p class="font-medium text-[#1d1d1f] text-base">Follow PlaneJane</p>
+          <div class="flex flex-wrap gap-2">
+            <a href="#" class="px-4 py-2 bg-[#111111] hover:bg-zinc-800 text-white text-sm font-medium rounded-md transition-colors">Twitter</a>
+            <a href="#" class="px-4 py-2 bg-[#111111] hover:bg-zinc-800 text-white text-sm font-medium rounded-md transition-colors">Instagram</a>
+            <a href="#" class="px-4 py-2 bg-[#111111] hover:bg-zinc-800 text-white text-sm font-medium rounded-md transition-colors">YouTube</a>
           </div>
         </div>
       </aside>
@@ -207,74 +180,64 @@ tailwind.config = {
     </div>
   </section>
 
-  <!-- FAQ Section -->
-  <section class="flex flex-col items-center justify-center gap-5 px-80 py-9 relative self-stretch w-full flex-[0_0_auto] bg-[#111111]">
-    <div class="flex items-center gap-2 px-5 py-0 relative self-stretch w-full flex-[0_0_auto]">
-      <div class="relative w-7 h-7 aspect-[1]">
-        <img class="absolute w-[75.00%] h-[87.30%] top-[12.70%] left-[25.00%]" src="img/Musical.svg" alt="" />
+  <!-- FAQ -->
+  <section class="bg-[#111111] px-4 sm:px-6 lg:px-10 xl:px-20 py-9">
+    <div class="max-w-screen-xl mx-auto space-y-6">
+      <div class="flex items-center gap-2">
+        <img src="img/Musical.svg" alt="" class="w-6 h-6" />
+        <h2 class="text-lg font-normal">Frequently Asked Questions</h2>
       </div>
-      <h2 class="relative flex-1 mt-[-1.00px] [font-family:'Inter-Regular',Helvetica] font-normal text-white text-lg tracking-[-0.36px] leading-7">Frequently Asked Questions</h2>
-    </div>
-
-    <div class="flex flex-col items-start gap-0 relative self-stretch w-full flex-[0_0_auto] px-5">
-
-      <div class="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto] py-5 border-b border-solid border-[#333333]">
-        <h3 class="relative self-stretch mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-white text-base tracking-[0] leading-6">How do I submit my music?</h3>
-        <p class="relative self-stretch [font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">Use the contact form above and select "Submit Music" as the subject. Include a link to your project (SoundCloud, DatPiff, etc.) and a short bio in the message field. We review all submissions but can only feature a limited number each week.</p>
+      <div class="divide-y divide-zinc-800">
+        <div class="py-5">
+          <h3 class="font-medium text-white text-base">How do I submit my music?</h3>
+          <p class="text-zinc-400 text-sm mt-2 leading-relaxed">Use the contact form above and select "Submit Music" as the subject. Include a link to your project (SoundCloud, DatPiff, etc.) and a short bio in the message field. We review all submissions but can only feature a limited number each week.</p>
+        </div>
+        <div class="py-5">
+          <h3 class="font-medium text-white text-base">How long does it take to get a response?</h3>
+          <p class="text-zinc-400 text-sm mt-2 leading-relaxed">We aim to respond to all inquiries within 1–2 business days. Music submissions may take up to 5 business days as our team carefully reviews each project.</p>
+        </div>
+        <div class="py-5">
+          <h3 class="font-medium text-white text-base">Can I advertise on PlaneJane?</h3>
+          <p class="text-zinc-400 text-sm mt-2 leading-relaxed">Yes! We offer banner ads, sponsored content, and newsletter placements. Select "Advertising &amp; Partnerships" in the form above and we'll send you our media kit with rates and reach statistics.</p>
+        </div>
+        <div class="py-5">
+          <h3 class="font-medium text-white text-base">Is PlaneJane free to use?</h3>
+          <p class="text-zinc-400 text-sm mt-2 leading-relaxed">Yes, PlaneJane is completely free for listeners. You can stream and download all available content without a subscription. Artists pay nothing to have their music featured.</p>
+        </div>
       </div>
-
-      <div class="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto] py-5 border-b border-solid border-[#333333]">
-        <h3 class="relative self-stretch mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-white text-base tracking-[0] leading-6">How long does it take to get a response?</h3>
-        <p class="relative self-stretch [font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">We aim to respond to all inquiries within 1–2 business days. Music submissions may take up to 5 business days as our team carefully reviews each project.</p>
-      </div>
-
-      <div class="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto] py-5 border-b border-solid border-[#333333]">
-        <h3 class="relative self-stretch mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-white text-base tracking-[0] leading-6">Can I advertise on PlaneJane?</h3>
-        <p class="relative self-stretch [font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">Yes! We offer banner ads, sponsored content, and newsletter placements. Select "Advertising &amp; Partnerships" in the form above and we'll send you our media kit with rates and reach statistics.</p>
-      </div>
-
-      <div class="flex flex-col items-start gap-2 relative self-stretch w-full flex-[0_0_auto] py-5">
-        <h3 class="relative self-stretch mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-white text-base tracking-[0] leading-6">Is PlaneJane free to use?</h3>
-        <p class="relative self-stretch [font-family:'Inter-Regular',Helvetica] font-normal text-[#999999] text-sm tracking-[0] leading-5">Yes, PlaneJane is completely free for listeners. You can stream and download all available content without a subscription. Artists pay nothing to have their music featured.</p>
-      </div>
-
     </div>
   </section>
 
 </main>
 
-<!-- Footer -->
-<footer class="px-80 py-6 bg-white flex flex-col items-center justify-center gap-5 relative self-stretch w-full flex-[0_0_auto]">
-  <div class="items-center justify-between flex px-5 py-0 relative self-stretch w-full flex-[0_0_auto]">
-    <div class="inline-flex items-center gap-2 relative flex-[0_0_auto]">
-      <p class="relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-[#ee1c25] text-sm tracking-[0] leading-5 whitespace-nowrap">Copyright &copy; 2026 PlaneJane - ilovethehype | mymusic2loud | alwaysonfire LLC</p>
-    </div>
-    <nav aria-label="Footer" class="inline-flex items-center gap-6 relative flex-[0_0_auto]">
-      <a href="index.html#new-releases" class="inline-flex items-center gap-2 relative flex-[0_0_auto]">
-        <span class="relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-[#1d1d1f] text-sm tracking-[0] leading-5 whitespace-nowrap">New Releases</span>
-      </a>
-      <a href="#" class="inline-flex items-center gap-2 relative flex-[0_0_auto]">
-        <span class="text-[#1d1d1f] text-sm leading-5 relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium tracking-[0] whitespace-nowrap">Songs</span>
-      </a>
-      <a href="artists.html" class="inline-flex items-center gap-2 relative flex-[0_0_auto]">
-        <span class="text-[#1d1d1f] text-sm leading-5 relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium tracking-[0] whitespace-nowrap">Artists</span>
-      </a>
-      <a href="albums.html" class="inline-flex items-center gap-2 relative flex-[0_0_auto]">
-        <span class="relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium text-[#1d1d1f] text-sm tracking-[0] leading-5 whitespace-nowrap">Albums</span>
-      </a>
-      <a href="#" class="inline-flex items-center gap-2 relative flex-[0_0_auto]">
-        <span class="text-[#1d1d1f] text-sm leading-5 relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium tracking-[0] whitespace-nowrap">Videos</span>
-      </a>
-      <a href="#" class="inline-flex items-center gap-2 relative flex-[0_0_auto]">
-        <span class="text-[#1d1d1f] text-sm leading-5 relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium tracking-[0] whitespace-nowrap">Shop</span>
-      </a>
-      <a href="contact.html" class="inline-flex items-center gap-2 relative flex-[0_0_auto]">
-        <span class="text-[#1d1d1f] text-sm leading-5 relative w-fit mt-[-1.00px] [font-family:'Inter-Medium',Helvetica] font-medium tracking-[0] whitespace-nowrap">Contact</span>
-      </a>
+<!-- FOOTER -->
+<footer class="bg-white px-4 sm:px-6 lg:px-10 xl:px-20 py-6">
+  <div class="max-w-screen-xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+    <p class="text-primary text-sm font-medium text-center sm:text-left">
+      Copyright &copy; 2026 PlaneJane - ilovethehype | mymusic2loud | alwaysonfire LLC
+    </p>
+    <nav aria-label="Footer" class="flex flex-wrap justify-center gap-4 text-sm font-medium text-[#1d1d1f]">
+      <a href="#" class="hover:text-primary transition-colors">New Releases</a>
+      <a href="#" class="hover:text-primary transition-colors">Songs</a>
+      <a href="artists.html" class="hover:text-primary transition-colors">Artists</a>
+      <a href="albums.html" class="hover:text-primary transition-colors">Albums</a>
+      <a href="#" class="hover:text-primary transition-colors">Videos</a>
+      <a href="#" class="hover:text-primary transition-colors">Shop</a>
+      <a href="contact.html" class="hover:text-primary transition-colors">Contact</a>
     </nav>
   </div>
 </footer>
 
-</div>
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileNav = document.getElementById('mobileNav');
+  menuBtn.addEventListener('click', () => {
+    const isOpen = !mobileNav.classList.contains('hidden');
+    mobileNav.classList.toggle('hidden', isOpen);
+    menuBtn.setAttribute('aria-expanded', String(!isOpen));
+    menuBtn.textContent = isOpen ? '☰' : '✕';
+  });
+</script>
+
 </body>
 </html>
